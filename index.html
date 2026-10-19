@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aflac Onboarding – Process Flow & Pain Points</title>
+<script src="https://assets.meshmesh.io/system/tailwindcss-browser-4.js"></script>
+<style type="text/tailwindcss">
+@theme {
+  --color-primary: #032D60;
+  --color-secondary: #0176D3;
+  --color-accent: #00B3FF;
+  --color-surface: #F4F6F9;
+  --color-muted: #565656;
+  --color-success: #2E844A;
+  --color-warning: #DD7A01;
+  --color-error: #BA0517;
+  --color-heading: #002C6E;
+  --color-light-blue: #EAF5FE;
+  --font-sans: "Salesforce Sans", Arial, sans-serif;
+}
+</style>
+</head>
+<body class="bg-surface font-sans text-gray-900">
+
+<header class="bg-primary text-white">
+  <div class="max-w-[1400px] mx-auto px-6 py-8">
+    <div class="flex items-center justify-between gap-4 flex-wrap">
+      <img src="https://a.sfdcstatic.com/shared/images/c360-nav/salesforce-with-type-logo.svg" alt="Salesforce" class="h-10">
+      <span class="text-xs bg-white/10 rounded px-3 py-1">Aflac Onsite Day 1 PM · Oct 13, 2026</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-medium mt-6">Aflac Group Benefits Onboarding</h1>
+    <p class="text-accent text-lg mt-1">Current-state process flow, pain points & future-state opportunities</p>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mt-8">
+      <div class="bg-white/10 rounded p-4"><div class="text-3xl font-bold text-accent">15</div><div class="text-xs text-white/80">Process steps</div></div>
+      <div class="bg-white/10 rounded p-4"><div class="text-3xl font-bold text-accent">6</div><div class="text-xs text-white/80">Teams / lanes involved</div></div>
+      <div class="bg-white/10 rounded p-4"><div class="text-3xl font-bold text-accent">4+</div><div class="text-xs text-white/80">Manual re-entry points</div></div>
+      <div class="bg-white/10 rounded p-4"><div class="text-3xl font-bold text-accent">8</div><div class="text-xs text-white/80">Systems & tools</div></div>
+      <div class="bg-white/10 rounded p-4"><div class="text-3xl font-bold text-accent">18</div><div class="text-xs text-white/80">Pain points identified</div></div>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-[1400px] mx-auto px-6 py-8 space-y-10">
+
+  <!-- Goal -->
+  <section class="bg-white rounded shadow-sm p-6">
+    <h2 class="text-heading text-xl font-medium mb-4">Onboarding timeline goal</h2>
+    <div class="flex items-center gap-2 md:gap-4 flex-wrap">
+      <div class="flex-1 min-w-[160px] rounded border-2 border-error/40 bg-error/5 p-4 text-center"><div class="text-xs uppercase tracking-wide text-muted">Today</div><div class="text-2xl font-bold text-error">&gt; 12 weeks</div><div class="text-xs text-muted">Manual, spreadsheet-driven</div></div>
+      <div class="text-2xl text-secondary">→</div>
+      <div class="flex-1 min-w-[160px] rounded border-2 border-warning/40 bg-warning/5 p-4 text-center"><div class="text-xs uppercase tracking-wide text-muted">Competitive</div><div class="text-2xl font-bold text-warning">12 weeks</div><div class="text-xs text-muted">Remove duplicate entry</div></div>
+      <div class="text-2xl text-secondary">→</div>
+      <div class="flex-1 min-w-[160px] rounded border-2 border-success/40 bg-success/5 p-4 text-center"><div class="text-xs uppercase tracking-wide text-muted">Win in market</div><div class="text-2xl font-bold text-success">8 weeks</div><div class="text-xs text-muted">Integrated UW → Implementation</div></div>
+    </div>
+    <div class="mt-4 flex flex-wrap gap-2 text-xs">
+      <span class="text-muted mr-1">Systems in play:</span>
+      <span class="bg-light-blue text-heading rounded px-2 py-1">Offline rating spreadsheets</span>
+      <span class="bg-light-blue text-heading rounded px-2 py-1">Rater tool (Excel)</span>
+      <span class="bg-light-blue text-heading rounded px-2 py-1">SharePoint</span>
+      <span class="bg-light-blue text-heading rounded px-2 py-1">Salesforce</span>
+      <span class="bg-light-blue text-heading rounded px-2 py-1">MuleSoft</span>
+      <span class="bg-light-blue text-heading rounded px-2 py-1">Certinia (billing)</span>
+      <span class="bg-light-blue text-heading rounded px-2 py-1">Jira</span>
+      <span class="bg-light-blue text-heading rounded px-2 py-1">Claim systems</span>
+    </div>
+  </section>
+
+  <!-- Swimlane -->
+  <section class="bg-white rounded shadow-sm p-6">
+    <div class="flex items-end justify-between flex-wrap gap-3 mb-4">
+      <div>
+        <h2 class="text-heading text-xl font-medium">Current-state process flow</h2>
+        <p class="text-sm text-muted">Click any step to see detail and linked pain points. Red badges mark pain points.</p>
+      </div>
+      <div class="flex gap-3 text-xs text-muted">
+        <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-sm bg-secondary inline-block"></span>Process step</span>
+        <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-sm bg-warning inline-block"></span>Manual / re-entry</span>
+        <span class="flex items-center gap-1"><span class="w-4 h-4 rounded-full bg-error text-white text-[9px] flex items-center justify-center">P</span>Pain point</span>
+      </div>
+    </div>
+    <div class="overflow-x-auto">
+      <div id="swimlane" class="min-w-[1100px]"></div>
+    </div>
+    <div id="stepDetail" class="mt-4 hidden rounded border border-secondary/30 bg-light-blue p-4"></div>
+  </section>
+
+  <!-- Pain points -->
+  <section class="bg-white rounded shadow-sm p-6">
+    <div class="flex items-end justify-between flex-wrap gap-3 mb-4">
+      <div>
+        <h2 class="text-heading text-xl font-medium">Pain points register</h2>
+        <p class="text-sm text-muted">Severity is a proposed rating for prioritization in the onboarding deep dive. Timestamps refer to the session recording.</p>
+      </div>
+      <div class="flex gap-2 flex-wrap">
+        <select id="fStage" class="border border-gray-300 rounded px-3 py-2 text-sm"><option value="">All stages</option></select>
+        <select id="fSev" class="border border-gray-300 rounded px-3 py-2 text-sm"><option value="">All severities</option><option>High</option><option>Medium</option><option>Low</option></select>
+      </div>
+    </div>
+    <div class="grid grid-cols-3 gap-3 mb-4">
+      <div class="rounded bg-error/5 border border-error/20 p-3"><div class="text-2xl font-bold text-error" id="cHigh"></div><div class="text-xs text-muted">High severity</div></div>
+      <div class="rounded bg-warning/5 border border-warning/20 p-3"><div class="text-2xl font-bold text-warning" id="cMed"></div><div class="text-xs text-muted">Medium severity</div></div>
+      <div class="rounded bg-success/5 border border-success/20 p-3"><div class="text-2xl font-bold text-success" id="cLow"></div><div class="text-xs text-muted">Low severity</div></div>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead class="bg-primary text-white text-left">
+          <tr><th class="p-3">ID</th><th class="p-3">Pain point</th><th class="p-3">Stage</th><th class="p-3">Impact</th><th class="p-3">Affects</th><th class="p-3">Severity</th><th class="p-3">Ref</th></tr>
+        </thead>
+        <tbody id="ppBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Future state -->
+  <section class="bg-white rounded shadow-sm p-6">
+    <h2 class="text-heading text-xl font-medium">Future-state opportunities</h2>
+    <p class="text-sm text-muted mb-4">Possible Salesforce capabilities mapped to the pain points — to be validated with Aflac stakeholders.</p>
+    <div class="bg-surface rounded p-4 mb-6 overflow-x-auto">
+      <div class="flex items-center gap-2 min-w-[900px] text-xs">
+        <div class="flex-1 bg-secondary text-white rounded p-3 text-center">Rater tool<br><span class="text-white/70">UW keeps grid flexibility</span></div><span class="text-secondary text-xl">→</span>
+        <div class="flex-1 bg-secondary text-white rounded p-3 text-center">MuleSoft<br><span class="text-white/70">Parse & map output</span></div><span class="text-secondary text-xl">→</span>
+        <div class="flex-1 bg-primary text-white rounded p-3 text-center">Salesforce plan & class model<br><span class="text-white/70">Single source of truth</span></div><span class="text-secondary text-xl">→</span>
+        <div class="flex-1 bg-success text-white rounded p-3 text-center">Auto Notice of Sale, contract & onboarding guide</div><span class="text-secondary text-xl">→</span>
+        <div class="flex-1 bg-success text-white rounded p-3 text-center">Onboarding tracker, alerts & docs on Account</div>
+      </div>
+    </div>
+    <div id="future" class="grid gap-4 md:grid-cols-2 lg:grid-cols-3"></div>
+  </section>
+
+  <!-- Next steps -->
+  <section class="bg-white rounded shadow-sm p-6">
+    <h2 class="text-heading text-xl font-medium mb-4">Agreed next steps from the session</h2>
+    <div class="grid gap-2 md:grid-cols-2 text-sm">
+      <div class="border-l-4 border-secondary bg-surface p-3">Share integration workbook with Bryce</div>
+      <div class="border-l-4 border-secondary bg-surface p-3">Build exception alerts for benefits needing an exception request or not filed</div>
+      <div class="border-l-4 border-secondary bg-surface p-3">Map current onboarding & ingestion process to proposed design <span class="text-success font-bold">(this artifact)</span></div>
+      <div class="border-l-4 border-secondary bg-surface p-3">Pitch document management in Salesforce (SharePoint transition) to the VP</div>
+      <div class="border-l-4 border-secondary bg-surface p-3">Optimize Rater output extraction & ingestion into Salesforce</div>
+      <div class="border-l-4 border-secondary bg-surface p-3">Add help text to optional coverage attributes</div>
+      <div class="border-l-4 border-secondary bg-surface p-3">Verify configuration screen locking at Approved stage</div>
+      <div class="border-l-4 border-secondary bg-surface p-3">Resolve decision table data display issues</div>
+      <div class="border-l-4 border-secondary bg-surface p-3">Bring bottleneck examples with cost/timeline impact for prioritization</div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-primary text-white/70 text-xs text-center py-6">Source: Aflac Onsite Day 1 PM meeting notes · Prepared for onboarding efficiency workshop</footer>
+
+<script>
+const lanes = ["Broker / Client","Underwriting","Sales / Finance","Implementation","Technical PM / Integration","Systems"];
+const stages = ["Quote","Sale","Onboard","Load & Issue","Service & Renew"];
+const steps = [
+ {n:1,stage:"Quote",lane:"Broker / Client",t:"RFP / plan requirements",d:"Broker or client submits request for proposal and plan requirements.",pp:[]},
+ {n:2,stage:"Quote",lane:"Underwriting",t:"Pull & key rating data",d:"Rating programs (Life, LTD, STD, FMLA, statutory) live in offline spreadsheets. Underwriters pull plan info and manually key class structures and pricing attributes.",pp:["P1","P2"],manual:true},
+ {n:3,stage:"Quote",lane:"Underwriting",t:"Plan design in Rater tool",d:"Plan design entered in the Excel Rater tool. UW guidelines and filing variations are built in via conditional formatting and column rules.",pp:["P15"]},
+ {n:4,stage:"Quote",lane:"Systems",t:"Rules check vs filed levels",d:"Automated checks compare plan provisions to filed/approved levels and raise red alerts when offerings exceed approved parameters.",pp:[]},
+ {n:5,stage:"Quote",lane:"Underwriting",t:"PDF proposal issued",d:"PDF proposal generated as the initial invitation to contract for clients and brokers.",pp:[]},
+ {n:6,stage:"Sale",lane:"Broker / Client",t:"Intent to purchase",d:"Client signals intent to purchase — often before exact plan options are finalized.",pp:["P3"]},
+ {n:7,stage:"Sale",lane:"Sales / Finance",t:"Notice of Sale & handoff",d:"Notice of Sale (financial & SOC requirement) is created and serves as the jumping-off point for implementation onboarding.",pp:["P4"],manual:true},
+ {n:8,stage:"Onboard",lane:"Implementation",t:"Excel onboarding guide",d:"Implementation uses Excel templates from SharePoint with change-control logs to track % complete, sign-off dates and client approvals across tabs.",pp:["P10"]},
+ {n:9,stage:"Onboard",lane:"Implementation",t:"Re-key plan & client setup",d:"Plans, benefits, rates and contacts re-entered. Captures client overview, funding (fully insured vs self-funded), care center & vanity lines, value-add services, FMLA & company leaves, ADA, takeover claims, STD, riders, enrollment/EOI, billing & accounting, portals, hierarchies, holiday & payroll calendars, payment schedules. Exceptions flagged with yellow cells.",pp:["P5","P7","P11","P12","P16"],manual:true},
+ {n:10,stage:"Onboard",lane:"Broker / Client",t:"Multi-week back-and-forth",d:"Extensive client discussions spanning multiple weeks, tracked through saved emails and folders. Small-business HR often lacks benefits expertise.",pp:["P8","P13"]},
+ {n:11,stage:"Onboard",lane:"Technical PM / Integration",t:"Tech PM workbook & integrations",d:"Technical PM workbook captures duplicate details, technical contacts and scope for eligibility, EOI, deduction file and SSO integrations.",pp:["P6"],manual:true},
+ {n:12,stage:"Load & Issue",lane:"Systems",t:"Rater → Salesforce → Certinia",d:"Rater output uploaded to Salesforce and processed via a MuleSoft job to populate objects; billing contracts generated in Certinia.",pp:["P9","P15"]},
+ {n:13,stage:"Load & Issue",lane:"Implementation",t:"Policies & certificates issued",d:"Policy Word documents retrieved from SharePoint. Master policies go to employers; certificates to members.",pp:["P10"]},
+ {n:14,stage:"Service & Renew",lane:"Underwriting",t:"Changes & endorsements",d:"Group-level changes and endorsements flow through Jira, underwriting reviews and contract amendments.",pp:["P14","P18"]},
+ {n:15,stage:"Service & Renew",lane:"Underwriting",t:"Renewal & long-term claims",d:"Master policies persist; new rates & guarantees applied from claims experience. Long-term claims tracked to normal retirement age.",pp:["P17"]}
+];
+const pps = [
+ ["P1","Rating programs housed offline in spreadsheets, not a shared repository","Quote","Visibility, version risk","Internal","High","00:00:41"],
+ ["P2","Underwriters manually key plan info, class structures and pricing","Quote","Time, keying errors","Internal","High","00:01:31"],
+ ["P3","Intent to purchase signalled before plan options finalized — delays implementation kickoff","Sale","Timeline","Both","High","00:08:26"],
+ ["P4","Notice of Sale created manually rather than generated from Rater output","Sale","Duplicate entry","Internal","High","01:06:56"],
+ ["P5","Implementation re-keys plans, benefits, rates and contacts into Excel guides","Onboard","Time, cost, errors","Internal","High","00:10:04"],
+ ["P6","Duplicate data captured across onboarding guide and technical PM workbook","Onboard","Redundancy","Internal","Medium","00:43:31"],
+ ["P7","Exceptions tracked via yellow cell formatting; no alerts for exceptions or unfiled benefits","Onboard","Compliance risk","Internal","High","00:19:03"],
+ ["P8","Multi-week client back-and-forth tracked in emails and folders; no real-time tracking","Onboard","Timeline, CX","Both","High","01:18:35"],
+ ["P9","Underwriting changes not visible downstream to Implementation","Cross-stage","Rework","Internal","High","01:01:08"],
+ ["P10","Documents live in SharePoint, not tied to accounts","Cross-stage","Findability","Internal","Medium","01:20:33"],
+ ["P11","Implementation discoveries (unquoted provisions, prior-carrier docs) require manual version control","Onboard","Rework","Both","Medium","01:07:58"],
+ ["P12","Takeover documents are non-searchable screen prints with varying carrier contract language","Onboard","Extraction effort","Internal","Medium","01:10:35"],
+ ["P13","Complex provisions hard for clients/brokers; small-business HR lacks benefits expertise","Onboard","Customer experience","Customer","Medium","01:21:07"],
+ ["P14","Changes & endorsements fragmented across Jira, UW reviews and amendments","Service & Renew","Fragmentation","Internal","Medium","00:47:17"],
+ ["P15","Heavy dependency on Rater tool; class consolidations risk data quality; tool cannot be replaced","Load & Issue","Data quality","Internal","Medium","00:59:25"],
+ ["P16","Complex coverages (critical illness, AD&D, procedure codes) strain the standard configurator","Onboard","Build complexity","Internal","Medium","02:20:21"],
+ ["P17","Renewals start from scratch when plan designs are not in Salesforce","Service & Renew","Time","Internal","Low","01:11:52"],
+ ["P18","Decision table display issues; need to lock configuration at Approved stage","Service & Renew","Quality, control","Internal","Low","02:06:07"]
+];
+const future = [
+ {t:"Automated Notice of Sale & onboarding guide",d:"Generate Notice of Sale, contract and onboarding guide from Rater output via MuleSoft — no re-keying.",pp:["P2","P4","P5","P6"],tag:"Strategic"},
+ {t:"Connected UW ↔ Implementation data model",d:"One plan/class model in Salesforce so underwriting changes flow downstream automatically.",pp:["P9","P11","P15"],tag:"Strategic"},
+ {t:"Exception & unfiled-benefit alerts",d:"Record-triggered automation flags benefits needing an exception request or not filed.",pp:["P7"],tag:"Quick win"},
+ {t:"Onboarding tracker in Salesforce",d:"Milestones, sign-offs and client communications tracked in real time on the account.",pp:["P3","P8"],tag:"Quick win"},
+ {t:"Document management on Account",d:"Replace SharePoint; tie policies and takeover docs to accounts; add extraction for screen prints.",pp:["P10","P12"],tag:"Strategic"},
+ {t:"Clone, compare & lock",d:"Plan design / quote cloning, side-by-side version comparison and configuration locking at Approved.",pp:["P11","P17","P18"],tag:"Quick win"},
+ {t:"Guided experience & Agentforce assistant",d:"Help text, coach marks, guided quotes and a glossary-grounded assistant for employers, brokers and implementers.",pp:["P13"],tag:"Strategic"},
+ {t:"Unified change & endorsement workflow",d:"Bring Jira-based endorsements and amendments into a single tracked Salesforce process.",pp:["P14"],tag:"Strategic"},
+ {t:"Child-object modeling for complex coverages",d:"Use child objects / alternative structures for critical illness, AD&D and procedure-code-heavy products.",pp:["P16"],tag:"Strategic"}
+];
+const sevColor = s => s==="High"?"bg-error text-white":s==="Medium"?"bg-warning text-white":"bg-success text-white";
+const badge = p => `<span class="inline-flex items-center justify-center rounded-full bg-error text-white text-[10px] font-bold px-1.5 h-5 min-w-5">${p}</span>`;
+
+// Swimlane
+const sw = document.getElementById("swimlane");
+let html = `<div class="grid grid-cols-[150px_repeat(5,1fr)]">`;
+html += `<div></div>` + stages.map((s,i)=>`<div class="bg-primary text-white text-sm font-bold text-center py-2 ${i<stages.length-1?'border-r border-white/20':''}">${s}</div>`).join("");
+lanes.forEach((l,li)=>{
+  html += `<div class="text-xs font-bold text-heading bg-light-blue flex items-center px-3 border-b border-white ${li%2?'':'bg-light-blue'}">${l}</div>`;
+  stages.forEach(s=>{
+    const cell = steps.filter(x=>x.lane===l && x.stage===s);
+    html += `<div class="border-b border-r border-gray-200 p-2 min-h-[84px] flex flex-col gap-2 ${li%2?'bg-surface':''}">` + cell.map(x=>`
+      <button onclick="showStep(${x.n})" class="text-left rounded shadow-sm border-l-4 ${x.manual?'border-warning':'border-secondary'} bg-white p-2 hover:ring-2 hover:ring-accent transition">
+        <div class="flex items-start gap-2"><span class="shrink-0 w-5 h-5 rounded-full ${x.manual?'bg-warning':'bg-secondary'} text-white text-[10px] font-bold flex items-center justify-center">${x.n}</span><span class="text-xs font-bold text-heading leading-tight">${x.t}</span></div>
+        ${x.pp.length?`<div class="flex flex-wrap gap-1 mt-1 pl-7">${x.pp.map(badge).join("")}</div>`:""}
+      </button>`).join("") + `</div>`;
+  });
+});
+html += `</div>`;
+sw.innerHTML = html;
+
+function showStep(n){
+  const x = steps.find(s=>s.n===n);
+  const el = document.getElementById("stepDetail");
+  const linked = pps.filter(p=>x.pp.includes(p[0]));
+  el.innerHTML = `<div class="flex justify-between gap-4"><div><div class="text-xs text-muted">Step ${x.n} · ${x.stage} · ${x.lane}</div><div class="text-lg font-bold text-heading">${x.t}</div></div><button onclick="this.closest('#stepDetail').classList.add('hidden')" class="text-muted text-xl leading-none">×</button></div>
+  <p class="text-sm mt-2">${x.d}</p>
+  ${linked.length?`<div class="mt-3 space-y-1">${linked.map(p=>`<div class="text-sm flex gap-2 items-start">${badge(p[0])}<span>${p[1]} <span class="text-xs rounded px-1.5 py-0.5 ${sevColor(p[5])}">${p[5]}</span></span></div>`).join("")}</div>`:`<p class="text-xs text-success mt-2">No pain points raised for this step.</p>`}`;
+  el.classList.remove("hidden");
+}
+
+// Register
+const fStage = document.getElementById("fStage"), fSev = document.getElementById("fSev");
+[...new Set(pps.map(p=>p[2]))].forEach(s=>fStage.insertAdjacentHTML("beforeend",`<option>${s}</option>`));
+function renderPP(){
+  const rows = pps.filter(p=>(!fStage.value||p[2]===fStage.value)&&(!fSev.value||p[5]===fSev.value));
+  document.getElementById("ppBody").innerHTML = rows.map((p,i)=>`<tr class="${i%2?'bg-surface':''} border-b border-gray-100">
+    <td class="p-3">${badge(p[0])}</td><td class="p-3">${p[1]}</td><td class="p-3 whitespace-nowrap">${p[2]}</td><td class="p-3 text-muted">${p[3]}</td><td class="p-3">${p[4]}</td>
+    <td class="p-3"><span class="text-xs rounded px-2 py-1 ${sevColor(p[5])}">${p[5]}</span></td><td class="p-3 font-mono text-xs text-secondary">${p[6]}</td></tr>`).join("") || `<tr><td colspan="7" class="p-6 text-center text-muted">No pain points match the filters.</td></tr>`;
+  ["High","Medium","Low"].forEach((s,i)=>document.getElementById(["cHigh","cMed","cLow"][i]).textContent = rows.filter(p=>p[5]===s).length);
+}
+fStage.onchange = fSev.onchange = renderPP; renderPP();
+
+// Future
+document.getElementById("future").innerHTML = future.map(f=>`<div class="rounded border border-gray-200 p-4 bg-white shadow-sm">
+  <div class="flex justify-between items-start gap-2"><h3 class="font-bold text-heading text-sm">${f.t}</h3><span class="text-[10px] rounded px-2 py-0.5 whitespace-nowrap ${f.tag==='Quick win'?'bg-success/10 text-success':'bg-secondary/10 text-secondary'}">${f.tag}</span></div>
+  <p class="text-sm text-muted mt-2">${f.d}</p><div class="flex flex-wrap gap-1 mt-3">${f.pp.map(badge).join("")}</div></div>`).join("");
+</script>
+
+<div data-mm-footer style="all:initial;display:flex;align-items:center;justify-content:center;padding:40px 24px 36px;margin-top:24px;border-top:1px solid rgba(127,127,127,.2);font:inherit;">
+  <img data-mm-footer-logo src="https://meshmesh.io/brand/meshmesh-salesforce-wordmark-blk.svg" alt="MeshMesh for Salesforce" style="display:block;height:26px;width:auto;max-width:none;margin:0;opacity:.8;border:0;box-shadow:none;" />
+</div>
+<script>(function(){try{
+  var logo=document.querySelector('[data-mm-footer-logo]');if(!logo)return;
+  var cx=document.createElement('canvas').getContext('2d');
+  function rgba(c){cx.clearRect(0,0,1,1);cx.fillStyle='#000';cx.fillStyle=c;cx.fillRect(0,0,1,1);return cx.getImageData(0,0,1,1).data;}
+  function bg(el){while(el){var c=getComputedStyle(el).backgroundColor;if(c){var p=rgba(c);if(p[3]>25)return p;}el=el.parentElement;}return null;}
+  var p=bg(document.body)||bg(document.documentElement);
+  if(p&&(0.2126*p[0]+0.7152*p[1]+0.0722*p[2])/255<0.5)logo.src="https://meshmesh.io/brand/meshmesh-salesforce-wordmark-wht.svg";
+}catch(e){}})();</script>
+</body>
+</html>
