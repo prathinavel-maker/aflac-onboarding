@@ -48,16 +48,16 @@
     <div class="lg:col-span-2">
       <span class="inline-block rounded-full bg-orange px-3 py-1 text-xs font-bold uppercase tracking-wide">Discovery readout</span>
       <h1 class="mt-4 text-4xl md:text-5xl font-extrabold leading-tight">Policy admin discovery</h1>
-      <p class="mt-4 max-w-2xl text-lg text-white/90">Onboarding takes more than 12 weeks, mostly because data is keyed in several times between underwriting, implementation and contracts. The goal is 8 weeks with Salesforce as the system of record.</p>
+      <p class="mt-4 max-w-2xl text-lg text-white/90">Onboarding takes more than 12 weeks, mostly because data is keyed in several times between underwriting, implementation and contracts. The mid-market goal is 8 weeks, with Salesforce as the system of record.</p>
     </div>
     <div class="rounded-2xl bg-white/10 backdrop-blur p-6 ring-1 ring-white/20">
-      <div class="text-sm text-white/80">Onboarding timeline target</div>
+      <div class="text-sm text-white/80">Mid-market onboarding target</div>
       <div class="mt-2 flex items-baseline gap-3 font-extrabold">
         <span class="text-5xl">12+</span>
         <svg class="h-7 w-7 text-orange-light" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         <span class="text-6xl text-orange-light">8</span><span class="text-lg font-semibold">weeks</span>
       </div>
-      <div class="mt-3 text-xs text-white/70">16 weeks to 12 months for groups of 5,000+ lives</div>
+      <div class="mt-3 text-xs text-white/70">Larger groups often choose 16+ weeks</div>
     </div>
   </div>
 </section>
@@ -96,7 +96,7 @@ const PERSONAS = [
   { id:'uw', name:'Group underwriter', role:'Rates and prices risk under tight deadlines in the offline Rater tool', goals:'Speed and flexibility in a grid format', pains:'Manual keying; ~75% of cases need prior-carrier booklet comparison; census uploaded per product', needs:'Keep Rater tool flexibility, AI extraction of plan design, zero downstream re-entry' },
   { id:'im', name:'Implementation manager', role:'Runs ~6 weeks of onboarding data gathering through client sign-off', goals:'Hit the 8-week onboarding target', pains:'Populating the onboarding guide, phone/email back-and-forth, sign-off delays', needs:'Guided workflow, real-time tracking, guide pre-populated 10 business days before kickoff' },
   { id:'ca', name:'Contract analyst', role:'Drafts policies, certificates, ASAs, statutory applications and runs QA', goals:'20-day certificate turnaround with quality', pains:'Word templates from SharePoint; up to 40 certificates per client; misunderstood provisions', needs:'Data-driven document generation, change log, clear handover criteria' },
-  { id:'ba', name:'Implementation BA', role:'Configures Claims Advantage and Certinia from the onboarding guide; runs UAT', goals:'Accurate, sequenced configuration', pains:'Re-keying, sequential dependencies, hundreds of dummy test claims', needs:'Structured source data, test-data tooling, complexity rating' },
+  { id:'ba', name:'Implementation BA', role:'Configures ClaimVantage and Certinia from the onboarding guide; runs UAT', goals:'Accurate, sequenced configuration', pains:'Re-keying, sequential dependencies, hundreds of dummy test claims', needs:'Structured source data, test-data tooling, complexity rating' },
   { id:'tpm', name:'Technical project manager', role:'Scopes and builds eligibility, EOI, deduction, SSO and outbound integrations', goals:'Reliable day-one integrations', pains:'Bespoke client formats; Snowflake transformation quality; no test data', needs:'Standard templates, API documentation, self-service file mapping' },
   { id:'cm', name:'Case manager / claims', role:'Adjudicates disability, leave and takeover claims', goals:'Correct benefits at the time of incident', pains:'Special-handling instructions missed; retroactive changes handled manually', needs:'In-workflow alerts, version-aware benefits pushed to claims' },
   { id:'ae', name:'Account exec / client liaison', role:'Owns the post-launch relationship and escalations', goals:'Retention and smooth renewals', pains:'Excel action logs on SharePoint; static PDF knowledge tool', needs:'Action tracking and dashboards in Salesforce, data for renewal stewardship' },
@@ -106,15 +106,15 @@ const PERSONAS = [
 const PN = Object.fromEntries(PERSONAS.map(p => [p.id, p.name]));
 
 const STAGES = [
-  { id:'s1', name:'Prospect and RFP', personas:['broker','sales'], systems:['Salesforce','Lupio','Broker platforms'], current:'Broker sends RFP + census (often via Proposal Tech, AON TLS, Threeflow). Opportunity created in Salesforce; Lupio drafts RFP responses.', future:'RFP and census land on the Opportunity; non-standard provisions extracted by AI; broker portal for status.' },
+  { id:'s1', name:'Prospect and RFP', personas:['broker','sales'], systems:['Salesforce','Loopio','Broker platforms'], current:'Broker sends RFP + census (often via Proposal Tech, AON TLS, Threeflow). Opportunity created in Salesforce; Loopio drafts RFP responses.', future:'RFP and census land on the Opportunity; non-standard provisions extracted by AI; broker portal for status.' },
   { id:'s2', name:'Quote and rate', personas:['uw'], systems:['Rater tool (Excel)'], current:'Underwriters key plan data into per-product offline Rater tools (Life, AD&D, LTD, STD, FMLA, statutory). Census uploaded to each. Manual (SOA) and experience rates blended; red alerts flag provisions above filed limits.', future:'Rater tool retained for flexibility; single census reused; product catalog rules and decision tables mirror filings.' },
   { id:'s3', name:'Proposal', personas:['uw','sales','broker'], systems:['Rater tool (Excel)'], current:'PDF proposal generated from Rater tool as invitation to contract; versions tracked through negotiation.', future:'Quote cloning for traceability and side-by-side version comparison before contract.' },
   { id:'s4', name:'Sold / Notice of Sale', personas:['sales','uw','im'], systems:['Salesforce','MuleSoft'], current:'Notice of Sale (financial/SOC requirement) from partly manual template. Rater tool output uploaded to Salesforce; MuleSoft maps 1,000+ fields.', future:'Notice of Sale generated from Rater tool output; filtered ingestion to catalog/quote; underwriting changes visible downstream.' },
   { id:'s5', name:'Implementation onboarding', personas:['im','hr','uw'], systems:['SharePoint','Excel onboarding guide'], current:'~6 weeks: client overview, funding, customer care, FMLA/leaves, ADA, takeovers, STD/LTD, Life riders, EOI, billing, portal roles, calendars. Change control log; exit on client sign-off.', future:'Guided online onboarding shared by implementation managers and the employer/broker portal; pre-populated from underwriting; dynamic logic and help text.' },
   { id:'s6', name:'Technical scoping', personas:['tpm','hr'], systems:['Integration workbook'], current:'Integration workbook captures contacts, products, eligibility/EOI/deduction files, SSO, outbound reporting.', future:'Standard file templates and API documentation lead the conversation; self-service file mapping.' },
   { id:'s7', name:'Contracts and documents', personas:['ca'], systems:['Word','SharePoint','Jira'], current:'Onboarding guide sign-off triggers contract team. Policies, 2–40 certificates, plan summaries, ASAs, statutory apps written manually in Word; 20-day target with QA.', future:'SmartComm document generation from Salesforce data on standard templates; statutory task packages with e-sign.' },
-  { id:'s8', name:'System configuration', personas:['ba'], systems:['Claims Advantage','Certinia'], current:'BAs configure claims/absence system and Certinia billing (classes to billing products) from the onboarding guide.', future:'Contract and policy records drive downstream configuration via integration; complexity rating sets timeline.' },
-  { id:'s9', name:'Testing and UAT', personas:['ba','tpm','ae','hr'], systems:['SmartComm','Claims Advantage'], current:'Swim lanes for communications, claims, data integration. Hundreds of dummy claims keyed manually; multi-tier sign-offs; communication packet approvals.', future:'Bulk test data generation; portal preview and sign-off of communication templates.' },
+  { id:'s8', name:'System configuration', personas:['ba'], systems:['ClaimVantage','Certinia'], current:'BAs configure claims/absence system and Certinia billing (classes to billing products) from the onboarding guide.', future:'Contract and policy records drive downstream configuration via integration; complexity rating sets timeline.' },
+  { id:'s9', name:'Testing and UAT', personas:['ba','tpm','ae','hr'], systems:['SmartComm','ClaimVantage'], current:'Swim lanes for communications, claims, data integration. Hundreds of dummy claims keyed manually; multi-tier sign-offs; communication packet approvals.', future:'Bulk test data generation; portal preview and sign-off of communication templates.' },
   { id:'s10', name:'Go-live', personas:['ae','hr','cm','tpm'], systems:['Employer portal','Snowflake'], current:'Portal access ~1 week before effective date; takeover/history claims loaded; eligibility feeds, SSO, API claim decisions, advice-to-pay reports live.', future:'Pre-tested outbound reports; Tableau self-service push reporting.' },
   { id:'s11', name:'Post-launch servicing', personas:['ae','cm','hr','member'], systems:['SharePoint','Jira','Snowflake'], current:'Excel action logs and PDF knowledge tool; annual case manager load balancing; changes via Jira (<90 days update docs, >90 days amendment); midterm adjustments.', future:'Census endorsements with cost impact, policy versioning, in-workflow alerts, portal issue reporting, dashboards.' },
   { id:'s12', name:'Renewal', personas:['uw','ae','sales'], systems:['Rater tool (Excel)','Salesforce'], current:'1/3/5-year rate guarantees; underwriting reviews claims experience; plan designs rebuilt.', future:'Clone existing plan design; class/division experience reporting linking claims, premium and policy.' },
@@ -122,9 +122,9 @@ const STAGES = [
 const SN = Object.fromEntries(STAGES.map(s => [s.id, s.name]));
 
 const PAINS = [
-  { id:'P1', title:'Onboarding exceeds 12 weeks', detail:'Target 8 weeks to win, ~12 to be competitive; 5,000+ lives can take 16 weeks to 12 months.', stage:'s5', sev:'Critical', personas:['im','hr','sales'] },
+  { id:'P1', title:'Onboarding exceeds 12 weeks', detail:'Mid-market goal: 8 weeks to win, ~12 to be competitive; larger groups often choose 16+ weeks for a careful implementation.', stage:'s5', sev:'Critical', personas:['im','hr','sales'] },
   { id:'P2', title:'Underwriting-to-implementation handoff gap', detail:'Changes in underwriting are not visible downstream; Notice of Sale may be issued before the final option is selected.', stage:'s4', sev:'Critical', personas:['uw','im','sales'] },
-  { id:'P3', title:'Repeated manual re-keying', detail:'Same data keyed into Rater tool, Notice of Sale, onboarding guide, Claims Advantage/Certinia and Word contracts.', stage:'s8', sev:'Critical', personas:['uw','im','ba','ca'] },
+  { id:'P3', title:'Repeated manual re-keying', detail:'Same data keyed into Rater tool, Notice of Sale, onboarding guide, ClaimVantage/Certinia and Word contracts.', stage:'s8', sev:'Critical', personas:['uw','im','ba','ca'] },
   { id:'P4', title:'Census uploaded per product Rater tool', detail:'Demographic census uploaded separately into each product rating tool.', stage:'s2', sev:'High', personas:['uw'] },
   { id:'P5', title:'Prior-carrier comparison burden', detail:'~75% of cases need apples-to-apples review of prior carrier booklets; non-searchable screen prints block AI.', stage:'s2', sev:'High', personas:['uw'] },
   { id:'P6', title:'Onboarding guide population and sign-off', detail:'Called out as the most time-consuming, effort-intensive part of the handoff.', stage:'s5', sev:'Critical', personas:['im','hr'] },
@@ -149,9 +149,9 @@ const SYSTEMS = [
   { name:'MuleSoft', role:'Rater tool parsing, eligibility upload', dir:'Bi-directional', today:'1,000+ field mapping job', future:'File mapping service and APIs', group:'core' },
   { name:'Data Cloud', role:'Staging and zero-copy', dir:'Bi-directional', today:'Emerging', future:'Census and eligibility staging; Snowflake / Workday zero-copy', group:'core' },
   { name:'Rater tool (Excel)', role:'Rating and proposal generation', dir:'Inbound', today:'Output uploaded, parsed by MuleSoft', future:'Retained; filtered ingestion feeds catalog and quote', group:'upstream' },
-  { name:'Lupio', role:'AI RFP responses', dir:'Inbound', today:'Standalone (since late 2025)', future:'Integrated with opportunity', group:'upstream' },
+  { name:'Loopio', role:'AI RFP responses', dir:'Inbound', today:'Standalone (since late 2025)', future:'Integrated with opportunity', group:'upstream' },
   { name:'Broker platforms', role:'Proposal Tech, AON TLS, Threeflow', dir:'Bi-directional', today:'Manual entry', future:'API or broker portal', group:'upstream' },
-  { name:'Claims Advantage', role:'Claims, absence and leave configuration', dir:'Outbound', today:'Manual BA load', future:'Fed from contract and policy via API', group:'downstream' },
+  { name:'ClaimVantage', role:'Claims, absence and leave configuration', dir:'Outbound', today:'Manual BA load', future:'Fed from contract and policy via API', group:'downstream' },
   { name:'Certinia', role:'Billing contracts, self-billing', dir:'Outbound', today:'Driven by Rater tool upload', future:'Contract-driven; Revenue Cloud option', group:'downstream' },
   { name:'SmartComm', role:'Communications and contract documents', dir:'Outbound', today:'POC', future:'Generated from Salesforce data', group:'downstream' },
   { name:'Snowflake', role:'Outbound report transformation', dir:'Outbound', today:'Quality and validation gaps', future:'Zero-copy with validation', group:'downstream' },
@@ -167,7 +167,7 @@ const FLOWS = [
   ['Rater tool output','Rater tool','Salesforce','File upload + MuleSoft job','Filtered ingestion to catalog/quote; Notice of Sale generated'],
   ['Eligibility and census','Employer HRIS','Salesforce / claims','Custom files per client','Real-time feeds, Data Cloud zero-copy, portal self-upload'],
   ['EOI and deduction files','Salesforce','Employer / carrier','Bespoke formats','Standard templates + APIs'],
-  ['Plan and policy setup','Salesforce','Claims Advantage','Manual BA configuration','Contract/policy driven integration'],
+  ['Plan and policy setup','Salesforce','ClaimVantage','Manual BA configuration','Contract/policy driven integration'],
   ['Billing','Salesforce','Certinia','Rater-driven contract','Contract-driven; self-billing portal'],
   ['Documents','Salesforce','SmartComm','Word templates on SharePoint','Data-driven generation'],
   ['Outbound reports','Salesforce','Snowflake / client','Extract and transform, quality gaps','Tableau push reporting with validation'],
