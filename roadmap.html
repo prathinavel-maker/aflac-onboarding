@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aflac Group Benefits | Path to 8-Week Onboarding</title>
+<script src="https://assets.meshmesh.io/system/tailwindcss-browser-4.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style type="text/tailwindcss">
+@theme {
+  --color-aflac: #00A5E6;
+  --color-aflac-dark: #0068A7;
+  --color-navy: #054C86;
+  --color-ink: #0B2A4A;
+  --color-orange: #F88C00;
+  --color-orange-light: #FAB25A;
+  --color-sky: #E6F6FD;
+  --color-mist: #F4F8FB;
+  --color-crit: #C8102E;
+  --color-ok: #2E8540;
+  --font-sans: "Open Sans", Arial, sans-serif;
+}
+</style>
+</head>
+<body class="bg-mist font-sans text-ink antialiased">
+
+<header class="bg-white border-b-4 border-aflac">
+  <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between gap-4">
+    <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/dad36c96-74ba-4084-bf67-149c677eff5f/fe219b7c-64cc-4fa6-8b3e-dd10aec0c9b4.png" alt="Aflac" class="h-10 w-auto">
+    <div class="text-right text-xs text-slate-500">
+      <div class="font-semibold text-navy">Group Benefits · Policy Administration</div>
+      <div>Delivery sequence · draft for discussion</div>
+      <div class="mt-2 flex justify-end gap-2">
+        <a href="index.html" class="rounded bg-sky px-2 py-1 text-[11px] font-semibold text-navy hover:bg-aflac hover:text-white">Onboarding</a>
+        <a href="policy-admin.html" class="rounded bg-sky px-2 py-1 text-[11px] font-semibold text-navy hover:bg-aflac hover:text-white">SF branded</a>
+        <a href="policy-admin-aflac.html" class="rounded bg-sky px-2 py-1 text-[11px] font-semibold text-navy hover:bg-aflac hover:text-white">Policy admin</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- North star -->
+<section class="bg-gradient-to-br from-navy via-aflac-dark to-aflac text-white">
+  <div class="mx-auto max-w-7xl px-6 py-12 grid gap-8 lg:grid-cols-3 items-center">
+    <div class="lg:col-span-2">
+      <span class="inline-block rounded-full bg-orange px-3 py-1 text-xs font-bold uppercase tracking-wide">Target Outcome · P1</span>
+      <h1 class="mt-4 text-4xl md:text-5xl font-extrabold leading-tight">Path to 8-week onboarding</h1>
+      <p class="mt-4 max-w-2xl text-lg text-white/90">We reach the target outcome by fixing three linked pain points in sequence: digitize the onboarding guide (P6), enter data once and reuse it downstream (P3), then connect underwriting upstream (P2).</p>
+    </div>
+    <div class="rounded-2xl bg-white/10 backdrop-blur p-6 ring-1 ring-white/20">
+      <div class="text-sm text-white/80">Mid-market onboarding target</div>
+      <div class="mt-2 flex items-baseline gap-3 font-extrabold">
+        <span class="text-5xl">12+</span>
+        <svg class="h-7 w-7 text-orange-light" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <span class="text-6xl text-orange-light">8</span><span class="text-lg font-semibold">weeks</span>
+      </div>
+      <div class="mt-3 text-xs text-white/70">Larger groups often choose 16+ weeks</div>
+    </div>
+  </div>
+</section>
+
+<main class="mx-auto max-w-7xl px-6 pb-16">
+
+  <!-- Driver tree -->
+  <section class="-mt-6 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+    <h2 class="text-xl font-bold text-navy flex items-center gap-2"><span class="h-6 w-1.5 rounded bg-orange"></span>How the three pain points add up to the target outcome</h2>
+    <p class="mt-1 text-sm text-slate-500">Select a pain point to jump to its wave below.</p>
+    <div class="mt-6 grid gap-4 lg:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1.1fr] items-stretch" id="drivers"></div>
+  </section>
+
+  <!-- Roadmap -->
+  <section class="mt-10">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <h2 class="text-2xl font-extrabold text-navy">Design and delivery sequence</h2>
+        <p class="mt-1 text-sm text-slate-600">Each wave's design starts while the previous wave is being delivered. Timings are indicative and should be validated once discovery and scope are confirmed.</p>
+      </div>
+      <div class="flex flex-wrap gap-3 text-xs">
+        <span class="flex items-center gap-1.5"><span class="h-3 w-6 rounded bg-aflac/30 ring-1 ring-aflac"></span>Design</span>
+        <span class="flex items-center gap-1.5"><span class="h-3 w-6 rounded bg-navy"></span>Build and deliver</span>
+        <span class="flex items-center gap-1.5"><span class="h-3 w-6 rounded bg-orange"></span>Pilot / adopt</span>
+        <span class="flex items-center gap-1.5"><span class="h-3 w-3 rotate-45 bg-crit"></span>Milestone</span>
+      </div>
+    </div>
+    <div class="mt-5 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200 overflow-x-auto">
+      <div id="gantt" class="min-w-[860px]"></div>
+    </div>
+  </section>
+
+  <!-- Wave detail -->
+  <section class="mt-10">
+    <div id="wavetabs" class="flex flex-wrap gap-2 border-b border-slate-200"></div>
+    <div id="wavepanel" class="pt-6"></div>
+  </section>
+
+  <!-- Why this order -->
+  <section class="mt-12 grid gap-6 lg:grid-cols-2">
+    <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+      <h2 class="text-xl font-bold text-navy flex items-center gap-2"><span class="h-6 w-1.5 rounded bg-orange"></span>Why this order</h2>
+      <ol id="why" class="mt-4 space-y-4 text-sm"></ol>
+    </div>
+    <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+      <h2 class="text-xl font-bold text-navy flex items-center gap-2"><span class="h-6 w-1.5 rounded bg-orange"></span>Key dependencies and risks</h2>
+      <div id="risks" class="mt-4 space-y-3 text-sm"></div>
+    </div>
+  </section>
+
+  <!-- KPIs -->
+  <section class="mt-12">
+    <h2 class="text-2xl font-extrabold text-navy">Measuring progress toward the target outcome</h2>
+    <p class="mt-1 text-sm text-slate-600">Baselines marked "to baseline" need to be measured with Aflac before Wave 1 starts.</p>
+    <div class="mt-5 rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead class="bg-navy text-white text-left"><tr><th class="px-4 py-3">Measure</th><th class="px-4 py-3">Linked to</th><th class="px-4 py-3">Today</th><th class="px-4 py-3">Target</th><th class="px-4 py-3">Measured from</th></tr></thead>
+        <tbody id="kpis"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-navy text-white/80 text-xs">
+  <div class="mx-auto max-w-7xl px-6 py-5 flex flex-wrap justify-between gap-2">
+    <span>Aflac Group Benefits · Path to 8-week onboarding</span>
+    <span>Draft for discussion · timings indicative</span>
+  </div>
+</footer>
+
+<script>
+const PAINS = {
+  P1: { title:'Onboarding exceeds 12 weeks', role:'Target outcome', how:'The outcome: 8 weeks to win, ~12 to be competitive for mid-market groups.' },
+  P6: { title:'Onboarding guide population and sign-off', role:'Biggest time sink', how:'Cut the ~6 weeks of data gathering and repeated sign-off calls with a guided, digital onboarding guide.' },
+  P3: { title:'Repeated manual re-keying', role:'Biggest effort and error driver', how:'Enter data once in the onboarding guide and reuse it for ClaimVantage, Certinia and contracts.' },
+  P2: { title:'Underwriting-to-implementation handoff gap', role:'Upstream starting point', how:'Pre-populate the guide from underwriting and the Notice of Sale so kickoff starts with known data.' },
+};
+
+const MONTHS = 12;
+const WAVES = [
+  { id:'w0', code:'Wave 0', name:'Mobilize and data foundation', pain:null, color:'slate',
+    bars:[{t:'design',s:1,e:2,label:'Mobilize + data model'}], milestones:[{m:2,label:'Discovery & scope confirmed'}],
+    objective:'Confirm discovery outcomes and scope, agree how onboarding data will be structured, and baseline today\'s timelines so progress can be measured.',
+    scope:['Confirm discovery outcomes and scope with leadership (Scott and Fred)','Baseline current onboarding duration, sign-off cycles and re-keying touchpoints','Define the onboarding data model: which fields are captured once and who owns them','Agree a complexity rating to size cases and plan resources','Pick pilot segment (standard mid-market groups)'],
+    personas:['Aflac leadership','Implementation manager','Underwriting','Digital Services'],
+    exit:['Discovery & scope confirmed','Baseline metrics captured','Onboarding data model signed off','Pilot segment chosen'],
+    evidence:'"We have to start tackling each of these individual processes within the life cycle… and not necessarily boil the ocean." (Day 2 close-out)' },
+  { id:'w1', code:'Wave 1', name:'Digital onboarding guide', pain:'P6', color:'aflac',
+    bars:[{t:'design',s:2,e:3,label:'Design'},{t:'build',s:4,e:6,label:'Build'},{t:'pilot',s:7,e:7,label:'Pilot'}], milestones:[{m:7,label:'First client onboarded digitally'}],
+    objective:'Replace the blank Excel onboarding guide with a guided digital experience that implementation managers and clients complete together, with sign-off tracked in one place.',
+    scope:['Guided onboarding flow with dynamic logic that hides questions that do not apply','Coach marks, plain-language help text and examples for complex provisions','Shorter question set for smaller clients','Section-by-section client review and sign-off with a built-in change log','Implementation path showing stages, tasks and percentage complete','Single record of decisions and conversations on the case (addresses P7)'],
+    personas:['Implementation manager','Employer HR admin','Broker','Underwriting (for rate-impacting items)'],
+    exit:['Pilot clients complete the guide digitally','Sign-off captured in the system, not by email','Fewer review calls per client than baseline'],
+    evidence:'"You have a 4-hour conversation with the customer where you go through a thousand lines of questions…" and "I can do it through TurboTax." (Day 1 PM)' },
+  { id:'w2', code:'Wave 2', name:'Enter once, reuse downstream', pain:'P3', color:'navy',
+    bars:[{t:'design',s:5,e:6,label:'Design'},{t:'build',s:7,e:9,label:'Build'},{t:'pilot',s:10,e:10,label:'Adopt'}], milestones:[{m:10,label:'ClaimVantage set up from guide data'}],
+    objective:'Use the onboarding guide inputs to automatically feed downstream setup so nobody re-keys the same plan data.',
+    scope:['ClaimVantage client setup fed automatically by onboarding guide inputs','Certinia billing setup fed from the same data (classes to billing products)','Contracts, certificates and plan summaries generated from guide data on standard templates','Flag the fields that still need BA interpretation (about half today)','Audit trail from each configured field back to its onboarding answer'],
+    personas:['Implementation BA (ClaimVantage)','Contract analyst','Billing / Certinia team','Client liaison (UAT)'],
+    exit:['Pilot cases configured without re-keying plan data','Contract drafts generated from data','Fewer setup errors found in UAT than baseline'],
+    evidence:'"The big objective is not having to manually key stuff over and over and over again." and "We can\'t scale that way." (Day 2 close-out)' },
+  { id:'w3', code:'Wave 3', name:'Connected underwriting handoff', pain:'P2', color:'orange',
+    bars:[{t:'design',s:7,e:8,label:'Design'},{t:'build',s:9,e:11,label:'Build'},{t:'pilot',s:12,e:12,label:'Adopt'}], milestones:[{m:12,label:'Guide pre-populated before kickoff'}],
+    objective:'Pre-populate the onboarding guide from underwriting so implementation starts with known data, and keep both teams in one shared view.',
+    scope:['Filter the Rater tool output into process data vs documentation only','Generate the Notice of Sale from Rater tool output instead of re-keying','Pre-populate the onboarding guide about 10 business days before kickoff','Flag changes as rate-impacting or not and route them to the assigned underwriter','Shared view so implementation sees underwriting changes as they happen'],
+    personas:['Group underwriter','Sales executive','Implementation manager'],
+    exit:['Notice of Sale generated from Rater output','Guide pre-populated for pilot cases before kickoff','Rate-impacting changes routed automatically'],
+    evidence:'"We don\'t know what option they picked yet… there\'s some friction with implementation." and "…implementation team could see that coming down the pipe." (Day 1 PM)' },
+];
+
+const WHY = [
+  ['Start where the time goes (P6)', 'Aflac called onboarding guide population and sign-off the most time-consuming part of the handoff. A digital guide delivers value on its own, even before anything is connected.'],
+  ['Make the guide the single entry point (P3)', 'Once the guide captures structured data, the same inputs can feed ClaimVantage, Certinia and contracts. This removes re-keying without changing how underwriters work.'],
+  ['Connect upstream last (P2)', 'Pre-populating the guide depends on filtering 1,000+ Rater tool fields and on underwriting buy-in. Aflac cautioned against making the Rater tool a hard dependency, so this wave builds on a proven guide rather than leading.'],
+  ['Design ahead, deliver in sequence', 'Each wave\'s design overlaps the previous wave\'s build, so the team learns from real usage and the program keeps moving.'],
+];
+
+const RISKS = [
+  ['Leadership sponsorship', 'Wave 0 depends on confirming discovery and scope with Scott and Fred and on keeping leadership involved.', 'High'],
+  ['Peak season capacity', 'Implementation and underwriting staff are busiest in the fall, so pilots and design sessions need to work around peak season.', 'High'],
+  ['Data model agreement', 'Waves 2 and 3 only work if Wave 0 agrees which fields are captured once and who owns them.', 'High'],
+  ['ClaimVantage interpretation', 'About half of onboarding answers need interpretation before setup, so some BA judgement will remain.', 'Medium'],
+  ['Rater tool output quality', 'Underwriters may simplify classes to get a case rated, so Rater output cannot be taken as final plan design.', 'Medium'],
+  ['Client adoption', 'Some clients prefer phone and email, so the digital guide must work alongside calls, especially for larger groups.', 'Medium'],
+];
+
+const KPIS = [
+  ['Onboarding duration, Notice of Sale to go-live (mid-market)','P1','12+ weeks','8 weeks','Wave 1 pilot onward'],
+  ['Client review / sign-off calls per case','P6','To baseline','Reduce materially','Wave 1'],
+  ['Onboarding guide sections signed off digitally','P6','0%','100% for pilot segment','Wave 1'],
+  ['Times the same plan provision is keyed per case','P3','To baseline (4–5 systems)','Once','Wave 2'],
+  ['Setup errors found in UAT','P3','To baseline','Reduce materially','Wave 2'],
+  ['Onboarding guide pre-populated before kickoff','P2','0%','Target agreed in Wave 0','Wave 3'],
+  ['Days from Notice of Sale to kickoff-ready data','P2','To baseline','Reduce materially','Wave 3'],
+];
+
+const C = { slate:'bg-slate-500', aflac:'bg-aflac', navy:'bg-navy', orange:'bg-orange' };
+const RING = { slate:'ring-slate-400', aflac:'ring-aflac', navy:'ring-navy', orange:'ring-orange' };
+const TXT = { slate:'text-slate-600', aflac:'text-aflac-dark', navy:'text-navy', orange:'text-orange' };
+let active = 'w1';
+
+/* drivers */
+const driverCard = id => { const p = PAINS[id]; const w = WAVES.find(x=>x.pain===id);
+  return `<button data-wave="${w.id}" class="rounded-xl bg-white p-4 text-left ring-1 ring-slate-200 hover:ring-aflac transition">
+    <div class="flex items-center gap-2"><span class="rounded-full ${C[w.color]} px-2 py-0.5 text-xs font-bold text-white">${id}</span><span class="text-xs font-semibold ${TXT[w.color]}">${w.code}</span></div>
+    <div class="mt-2 font-bold text-navy">${p.title}</div><div class="mt-1 text-xs font-semibold text-slate-500">${p.role}</div>
+    <p class="mt-2 text-sm text-slate-600">${p.how}</p></button>`; };
+const arrow = `<div class="hidden lg:flex items-center justify-center text-2xl font-extrabold text-orange">→</div>`;
+document.getElementById('drivers').innerHTML = driverCard('P6') + arrow + driverCard('P3') + arrow + driverCard('P2') + arrow +
+  `<div class="rounded-xl bg-gradient-to-br from-navy to-aflac p-4 text-white"><span class="rounded-full bg-orange px-2 py-0.5 text-xs font-bold">P1 · Target Outcome</span>
+   <div class="mt-2 text-lg font-extrabold">${PAINS.P1.title}</div><p class="mt-2 text-sm text-white/85">${PAINS.P1.how}</p></div>`;
+
+/* gantt */
+function renderGantt(){
+  const head = `<div class="grid grid-cols-[220px_1fr] items-end pb-2 border-b border-slate-200 text-xs text-slate-500">
+    <div class="font-semibold text-navy">Wave</div>
+    <div class="grid" style="grid-template-columns:repeat(${MONTHS},1fr)">${Array.from({length:MONTHS},(_,i)=>`<div class="text-center">M${i+1}</div>`).join('')}</div></div>`;
+  const rows = WAVES.map(w => {
+    const sel = w.id===active;
+    const bars = w.bars.map(b => {
+      const cls = b.t==='design' ? `bg-aflac/25 ring-1 ring-aflac text-navy` : b.t==='build' ? `bg-navy text-white` : `bg-orange text-white`;
+      return `<div class="row-start-1 h-8 rounded-md ${cls} text-[11px] font-semibold flex items-center justify-center truncate px-1" style="grid-column:${b.s} / ${b.e+1}">${b.label}</div>`;
+    }).join('');
+    const ms = w.milestones.map(m => m.m > MONTHS-3
+      ? `<div class="row-start-2 flex items-center justify-end gap-1.5 text-[11px] text-crit font-semibold whitespace-nowrap" style="grid-column:${m.m-3} / ${m.m+1}">${m.label}<span class="h-2.5 w-2.5 rotate-45 bg-crit shrink-0"></span></div>`
+      : `<div class="row-start-2 flex items-center gap-1.5 text-[11px] text-crit font-semibold whitespace-nowrap" style="grid-column:${m.m} / span 4"><span class="h-2.5 w-2.5 rotate-45 bg-crit shrink-0"></span>${m.label}</div>`).join('');
+    return `<button data-wave="${w.id}" class="grid w-full grid-cols-[220px_1fr] items-center py-3 text-left border-b border-slate-100 ${sel?'bg-sky/60':''} hover:bg-sky/40 transition">
+      <div class="pr-3 pl-2"><div class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full ${C[w.color]}"></span><span class="text-xs font-bold ${TXT[w.color]}">${w.code}${w.pain?' · '+w.pain:''}</span></div><div class="text-sm font-bold text-navy">${w.name}</div></div>
+      <div class="relative grid gap-y-1" style="grid-template-columns:repeat(${MONTHS},1fr)">
+        ${Array.from({length:MONTHS},(_,i)=>`<div class="row-start-1 row-span-2 border-l border-dashed border-slate-200 h-full" style="grid-column:${i+1}"></div>`).join('')}
+        ${bars}${ms}
+      </div></button>`;
+  }).join('');
+  const north = `<div class="grid grid-cols-[220px_1fr] items-center pt-3">
+    <div class="pl-2 text-sm font-bold text-navy">P1 · Target outcome tracking</div>
+    <div class="grid" style="grid-template-columns:repeat(${MONTHS},1fr)">
+      <div class="h-7 rounded-md bg-gradient-to-r from-aflac/20 to-orange/40 ring-1 ring-orange/50 text-[11px] font-semibold text-navy flex items-center justify-between px-3" style="grid-column:7 / 13"><span>Measure onboarding duration on pilot cases</span><span>Target: 8 weeks</span></div>
+    </div></div>`;
+  document.getElementById('gantt').innerHTML = head + rows + north;
+}
+
+/* wave tabs + panel */
+function renderWave(){
+  document.getElementById('wavetabs').innerHTML = WAVES.map(w =>
+    `<button data-wave="${w.id}" class="-mb-px border-b-4 px-4 py-3 text-sm font-bold transition ${w.id===active?'border-orange text-navy':'border-transparent text-slate-500 hover:text-aflac'}">${w.code}${w.pain?' · '+w.pain:''}</button>`).join('');
+  const w = WAVES.find(x=>x.id===active);
+  const list = (arr, dot) => arr.map(s=>`<li class="flex gap-2"><span class="mt-1.5 h-2 w-2 shrink-0 rounded-full ${dot}"></span><span>${s}</span></li>`).join('');
+  const timing = w.bars.map(b=>`<span class="rounded-md bg-mist px-2 py-0.5 text-xs font-semibold text-navy ring-1 ring-slate-200">${b.label}: M${b.s}${b.e>b.s?'–M'+b.e:''}</span>`).join(' ');
+  document.getElementById('wavepanel').innerHTML = `
+  <div class="rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 overflow-hidden">
+    <div class="bg-gradient-to-r from-navy to-aflac p-6 text-white">
+      <div class="flex flex-wrap items-center gap-2"><span class="rounded-full bg-orange px-3 py-0.5 text-xs font-bold">${w.code}</span>${w.pain?`<span class="rounded-full bg-white/20 px-3 py-0.5 text-xs font-bold">Solves ${w.pain}: ${PAINS[w.pain].title}</span>`:''}</div>
+      <h3 class="mt-3 text-2xl font-extrabold">${w.name}</h3>
+      <p class="mt-2 max-w-3xl text-white/90">${w.objective}</p>
+      <div class="mt-4 flex flex-wrap gap-2">${timing}</div>
+    </div>
+    <div class="grid gap-6 p-6 lg:grid-cols-3">
+      <div class="lg:col-span-2">
+        <h4 class="font-bold text-navy">What we design and deliver</h4>
+        <ul class="mt-3 space-y-2 text-sm">${list(w.scope,'bg-aflac')}</ul>
+        <div class="mt-6 rounded-xl bg-sky p-4 text-sm"><div class="font-bold text-navy">What we heard</div><p class="mt-1 italic text-slate-700">${w.evidence}</p></div>
+      </div>
+      <div class="space-y-6 text-sm">
+        <div><h4 class="font-bold text-navy">Who is involved</h4><div class="mt-2 flex flex-wrap gap-1">${w.personas.map(p=>`<span class="rounded-md bg-sky px-2 py-0.5 text-xs font-semibold text-navy">${p}</span>`).join('')}</div></div>
+        <div><h4 class="font-bold text-navy">Exit criteria</h4><ul class="mt-2 space-y-2">${list(w.exit,'bg-ok')}</ul></div>
+        <div><h4 class="font-bold text-navy">Moves the target outcome by</h4><p class="mt-1 text-slate-600">${w.pain?PAINS[w.pain].how:'Creating the baseline, data model and sponsorship that every later wave depends on.'}</p></div>
+      </div>
+    </div>
+  </div>`;
+}
+
+document.getElementById('why').innerHTML = WHY.map((w,i)=>`<li class="flex gap-3"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-aflac text-xs font-bold text-white">${i+1}</span><div><div class="font-bold text-navy">${w[0]}</div><p class="text-slate-600">${w[1]}</p></div></li>`).join('');
+document.getElementById('risks').innerHTML = RISKS.map(r=>`<div class="flex items-start gap-3 rounded-xl bg-mist p-3 ring-1 ring-slate-200"><span class="rounded-full px-2 py-0.5 text-xs font-bold text-white ${r[2]==='High'?'bg-crit':'bg-orange'}">${r[2]}</span><div><div class="font-bold text-navy">${r[0]}</div><p class="text-slate-600">${r[1]}</p></div></div>`).join('');
+document.getElementById('kpis').innerHTML = KPIS.map((k,i)=>`<tr class="${i%2?'bg-mist':'bg-white'}"><td class="px-4 py-3 font-semibold text-navy">${k[0]}</td><td class="px-4 py-3"><span class="rounded-full ${k[1]==='P1'?'bg-orange':'bg-aflac'} px-2 py-0.5 text-xs font-bold text-white">${k[1]}</span></td><td class="px-4 py-3 text-slate-600">${k[2]}</td><td class="px-4 py-3 font-semibold text-aflac-dark">${k[3]}</td><td class="px-4 py-3 text-slate-500">${k[4]}</td></tr>`).join('');
+
+function render(){ renderGantt(); renderWave(); }
+document.addEventListener('click', e => { const b = e.target.closest('[data-wave]'); if (!b) return; active = b.dataset.wave; render();
+  if (b.closest('#drivers')) document.getElementById('wavetabs').scrollIntoView({behavior:'smooth', block:'start'}); });
+render();
+</script>
+
+<div data-mm-footer style="all:initial;display:flex;align-items:center;justify-content:center;padding:40px 24px 36px;margin-top:24px;border-top:1px solid rgba(127,127,127,.2);font:inherit;">
+  <img data-mm-footer-logo src="https://meshmesh.io/brand/meshmesh-salesforce-wordmark-blk.svg" alt="MeshMesh for Salesforce" style="display:block;height:26px;width:auto;max-width:none;margin:0;opacity:.8;border:0;box-shadow:none;" />
+</div>
+<script>(function(){try{
+  var logo=document.querySelector('[data-mm-footer-logo]');if(!logo)return;
+  var cx=document.createElement('canvas').getContext('2d');
+  function rgba(c){cx.clearRect(0,0,1,1);cx.fillStyle='#000';cx.fillStyle=c;cx.fillRect(0,0,1,1);return cx.getImageData(0,0,1,1).data;}
+  function bg(el){while(el){var c=getComputedStyle(el).backgroundColor;if(c){var p=rgba(c);if(p[3]>25)return p;}el=el.parentElement;}return null;}
+  var p=bg(document.body)||bg(document.documentElement);
+  if(p&&(0.2126*p[0]+0.7152*p[1]+0.0722*p[2])/255<0.5)logo.src="https://meshmesh.io/brand/meshmesh-salesforce-wordmark-wht.svg";
+}catch(e){}})();</script>
+</body>
+</html>
