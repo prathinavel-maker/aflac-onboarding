@@ -169,8 +169,8 @@ const FLOWS = [
 /* ---------- helpers ---------- */
 const PREV = {"P1": "P6", "P2": "P3", "P3": "P9", "P4": "P2", "P5": "P5", "P6": "P8", "P7": "P4", "P8": "P7", "P9": "P10", "P10": "P14", "P11": "P11", "P12": "P13", "P13": "P15", "P14": "P16", "P15": "P17", "P16": "P18", "P17": "P19", "P18": "P20"};
 const SEQ = [
-  { id:'P1', group:'Critical', note:'Now includes product and contract complexity. First step is moving the guide off Excel into a system; up to 80–90% may be pre-filled from Rater tool data.' },
-  { id:'P2', group:'Critical', note:'Now includes structured data capture, validation and integrity: enter once, accurately, and reuse downstream.' },
+  { id:'P1', group:'Critical', note:'First step is moving the guide off Excel into a system; up to 80–90% may be pre-filled from Rater tool data.' },
+  { id:'P2', group:'Critical', note:'Execution of P1 will help identify instances of manual re-keying. Now includes structured data capture, validation and integrity: enter once, accurately, and reuse downstream.' },
   { id:'P3', group:'Critical', note:'Elevated from High. Contracts and plan summaries generated from data validate that onboarding captured everything.' },
   { id:'P4', group:'Critical', note:'Stays Critical. The re-keying side is solved with P1 + P2; minimum Notice of Sale data and a shared view follow as a second phase.' },
   { id:'P5', group:'High · next after the foundation', note:'Borderline critical: ingest prior carrier booklets and RFP plan PDFs into the Rater tool. Needs the data structure first.' },
@@ -190,8 +190,7 @@ const SEQ = [
 ];
 const CHANGES = [
   ['Renumbered','bg-navy','IDs now follow the sequence','P1 to P18 are numbered in the order they will be tackled, starting with the onboarding guide. Former IDs are shown on each card.'],
-  ['Separated','bg-ok','Onboarding lifecycle is the target outcome','12–16 weeks down to 8–12 weeks. It is no longer listed as a pain point; every pain point contributes to it.'],
-  ['Updated','bg-aflac','P1 now includes product complexity','Contract language and provisions are hard for clients to understand.'],
+  ['Separated','bg-ok','Target Outcome: Condense Onboarding Lifecycle','12–16 weeks down to 8–12 weeks. It is no longer listed as a pain point; every pain point contributes to it.'],
   ['Elevated','bg-crit','P3 is now Critical','Contract and plan summary creation, sequenced right after the onboarding guide.'],
   ['Phased','bg-orange','P4 stays Critical, in two parts','Re-keying solved with P1 + P2; other handoff fixes follow later.'],
   ['Removed','bg-slate-500','Dummy claims (former P12) is solved','Leave and STD test claims are now automated.'],
@@ -203,7 +202,7 @@ const otag = t => `<span class="inline-flex rounded-md border border-slate-300 p
 const chip = (label, active, attr) => `<button ${attr} class="rounded-full px-4 py-1.5 text-sm font-semibold transition ${active ? 'bg-navy text-white' : 'bg-white text-navy ring-1 ring-slate-300 hover:ring-aflac'}">${label}</button>`;
 const card = 'rounded-2xl bg-white shadow-sm ring-1 ring-slate-200';
 
-const state = { tab:'changes', mode:'current', stage:'s5', sev:'All', pstage:'All', q:'', persona:'im', iview:'today' };
+const state = { tab:'pains', mode:'current', stage:'s5', sev:'All', pstage:'All', q:'', persona:'im', iview:'today' };
 
 /* ---------- KPIs ---------- */
 document.getElementById('kpis').innerHTML = [
@@ -217,7 +216,7 @@ document.getElementById('kpis').innerHTML = [
 
 
 /* ---------- tabs ---------- */
-const TABS = [['changes','Change Log'],['pains','Prioritized pain points'],['process','Process flow'],['personas','Personas'],['integration','System integration']];
+const TABS = [['pains','Prioritized pain points'],['changes','Change Log'],['process','Process flow'],['personas','Personas'],['integration','System integration']];
 function renderTabs(){
   document.getElementById('tabs').innerHTML = TABS.map(([k,l]) =>
     `<button data-tab="${k}" class="-mb-px border-b-4 px-4 py-3 text-sm font-bold transition ${state.tab===k?'border-orange text-navy':'border-transparent text-slate-500 hover:text-aflac'}">${l}</button>`).join('');
