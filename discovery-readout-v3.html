@@ -68,17 +68,6 @@
   <!-- KPI cards -->
   <section id="kpis" class="grid grid-cols-2 md:grid-cols-4 gap-4"></section>
 
-  <!-- What changed -->
-  <section class="mt-10 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-    <h2 class="text-xl font-bold text-navy flex items-center gap-2"><span class="h-6 w-1.5 rounded bg-orange"></span>What changed in V3</h2>
-    <p class="mt-1 text-sm text-slate-500">Agreed with Aflac on the priority review call. All IDs below use the new numbering.</p>
-    <div id="changes" class="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-3"></div>
-    <details class="mt-6 rounded-xl bg-mist p-4 ring-1 ring-slate-200" open>
-      <summary class="cursor-pointer font-bold text-navy">Old to new ID mapping</summary>
-      <div id="idmap" class="mt-3 grid gap-2 sm:grid-cols-3 lg:grid-cols-5 text-sm"></div>
-    </details>
-  </section>
-
   <!-- Tabs -->
   <nav class="mt-10 flex flex-wrap gap-2 border-b border-slate-200" id="tabs"></nav>
   <section id="panel" class="pt-8"></section>
@@ -180,24 +169,24 @@ const FLOWS = [
 /* ---------- helpers ---------- */
 const PREV = {"P1": "P6", "P2": "P3", "P3": "P9", "P4": "P2", "P5": "P5", "P6": "P8", "P7": "P4", "P8": "P7", "P9": "P10", "P10": "P14", "P11": "P11", "P12": "P13", "P13": "P15", "P14": "P16", "P15": "P17", "P16": "P18", "P17": "P19", "P18": "P20"};
 const SEQ = [
-  { id:'P1', group:'Critical · Wave 1 (P1 + P2 together)', wave:'Wave 1', note:'Now includes product and contract complexity. First step is moving the guide off Excel into a system; up to 80–90% may be pre-filled from Rater tool data.' },
-  { id:'P2', group:'Critical · Wave 1 (P1 + P2 together)', wave:'Wave 1', note:'Handled with P1 as one approach. Now includes structured data capture, validation and integrity: enter once, accurately, and reuse downstream.' },
-  { id:'P3', group:'Critical · Wave 2', wave:'Wave 2', note:'Elevated from High. Contracts and plan summaries generated from data validate that onboarding captured everything.' },
-  { id:'P4', group:'Critical · Wave 3', wave:'Wave 3', note:'Stays Critical. The re-keying side is solved in Wave 1; minimum Notice of Sale data and a shared view follow as a second phase.' },
-  { id:'P5', group:'High · next after the foundation', wave:'Next', note:'Borderline critical: ingest prior carrier booklets and RFP plan PDFs into the Rater tool. Needs the data structure first.' },
-  { id:'P6', group:'High · next after the foundation', wave:'Start early', note:'Evaluate the document repository early, Salesforce first, before documents are generated in Wave 2.' },
-  { id:'P7', group:'High · next after the foundation', wave:'Next', note:'Stays High. Moves up if pre-filling the guide from Rater data depends on it.' },
-  { id:'P8', group:'High · next after the foundation', wave:'Next', note:'Confirmed High: one activity log for emails and Teams conversations.' },
-  { id:'P9', group:'High · later', wave:'Later', note:'' },
-  { id:'P10', group:'High · later', wave:'Later', note:'' },
-  { id:'P11', group:'Medium', wave:'With Wave 1', note:'Largely addressed by the plain-language layer in P1.' },
-  { id:'P12', group:'Medium', wave:'Later', note:'' },
-  { id:'P13', group:'Medium', wave:'Later', note:'' },
-  { id:'P14', group:'Medium', wave:'Later', note:'' },
-  { id:'P15', group:'Medium', wave:'Later', note:'' },
-  { id:'P16', group:'Medium', wave:'With Wave 1', note:'Structured exception flags come with structured data capture.' },
-  { id:'P17', group:'Medium', wave:'Later', note:'' },
-  { id:'P18', group:'Low', wave:'With P8', note:'' },
+  { id:'P1', group:'Critical · tackled together (P1 + P2)', note:'Now includes product and contract complexity. First step is moving the guide off Excel into a system; up to 80–90% may be pre-filled from Rater tool data.' },
+  { id:'P2', group:'Critical · tackled together (P1 + P2)', note:'Handled with P1 as one approach. Now includes structured data capture, validation and integrity: enter once, accurately, and reuse downstream.' },
+  { id:'P3', group:'Critical', note:'Elevated from High. Contracts and plan summaries generated from data validate that onboarding captured everything.' },
+  { id:'P4', group:'Critical', note:'Stays Critical. The re-keying side is solved with P1 + P2; minimum Notice of Sale data and a shared view follow as a second phase.' },
+  { id:'P5', group:'High · next after the foundation', note:'Borderline critical: ingest prior carrier booklets and RFP plan PDFs into the Rater tool. Needs the data structure first.' },
+  { id:'P6', group:'High · next after the foundation', note:'Evaluate the document repository early, Salesforce first, before contracts and plan summaries are generated (P3).' },
+  { id:'P7', group:'High · next after the foundation', note:'Stays High. Moves up if pre-filling the guide from Rater data depends on it.' },
+  { id:'P8', group:'High · next after the foundation', note:'Confirmed High: one activity log for emails and Teams conversations.' },
+  { id:'P9', group:'High · later', note:'' },
+  { id:'P10', group:'High · later', note:'' },
+  { id:'P11', group:'Medium', note:'Largely addressed by the plain-language layer in P1.' },
+  { id:'P12', group:'Medium', note:'' },
+  { id:'P13', group:'Medium', note:'' },
+  { id:'P14', group:'Medium', note:'' },
+  { id:'P15', group:'Medium', note:'' },
+  { id:'P16', group:'Medium', note:'Structured exception flags come with structured data capture.' },
+  { id:'P17', group:'Medium', note:'' },
+  { id:'P18', group:'Low', note:'' },
 ];
 const CHANGES = [
   ['Renumbered','bg-navy','IDs now follow the sequence','P1 to P18 are numbered in the order they will be tackled, starting with the onboarding guide. Former IDs are shown on each card.'],
@@ -226,12 +215,10 @@ document.getElementById('kpis').innerHTML = [
 ].map(([l,v,n],i) => `<div class="${card} p-5 ${i===1?'border-t-4 border-orange':'border-t-4 border-aflac'}"><div class="text-sm text-slate-500">${l}</div><div class="mt-1 text-3xl font-extrabold text-navy tabular-nums">${v}</div><div class="text-xs text-slate-500">${n}</div></div>`).join('');
 
 
-document.getElementById('changes').innerHTML = CHANGES.map(c=>`<div class="rounded-xl bg-mist p-4 ring-1 ring-slate-200"><span class="rounded-full ${c[1]} px-2 py-0.5 text-xs font-bold text-white">${c[0]}</span><div class="mt-2 font-bold text-navy">${c[2]}</div><p class="mt-1 text-sm text-slate-600">${c[3]}</p></div>`).join('');
 
-document.getElementById('idmap').innerHTML = `<div class="flex items-center gap-2 rounded-lg bg-white px-3 py-2 ring-1 ring-slate-200"><span class="text-slate-500">P1</span><span class="text-orange font-bold">→</span><span class="font-extrabold text-navy">Target outcome</span></div>` + SEQ.map(s=>`<div class="flex items-center gap-2 rounded-lg bg-white px-3 py-2 ring-1 ring-slate-200"><span class="text-slate-500">${PREV[s.id]}</span><span class="text-orange font-bold">→</span><span class="font-extrabold text-navy">${s.id}</span></div>`).join('') + `<div class="flex items-center gap-2 rounded-lg bg-white px-3 py-2 ring-1 ring-slate-200"><span class="text-slate-500 line-through">P12</span><span class="text-xs text-slate-500">removed (solved)</span></div>`;
 
 /* ---------- tabs ---------- */
-const TABS = [['pains','Prioritized pain points'],['process','Process flow'],['personas','Personas'],['integration','System integration']];
+const TABS = [['pains','Prioritized pain points'],['changes','What changed in V3'],['process','Process flow'],['personas','Personas'],['integration','System integration']];
 function renderTabs(){
   document.getElementById('tabs').innerHTML = TABS.map(([k,l]) =>
     `<button data-tab="${k}" class="-mb-px border-b-4 px-4 py-3 text-sm font-bold transition ${state.tab===k?'border-orange text-navy':'border-transparent text-slate-500 hover:text-aflac'}">${l}</button>`).join('');
@@ -282,9 +269,8 @@ function renderPains(){
   const ordered = SEQ.filter(s=>P[s.id]).map((s,i)=>({...P[s.id], ...s, rank:i}));
   const list = ordered.filter(p=>(state.sev==='All'||p.sev===state.sev)&&(state.pstage==='All'||p.stage===state.pstage)&&(p.title+p.detail+p.note).toLowerCase().includes(state.q.toLowerCase()));
   const groups = [...new Set(list.map(p=>p.group))];
-  const waveCls = w => w==='Wave 1'?'bg-aflac text-white':w==='Wave 2'?'bg-navy text-white':w==='Wave 3'?'bg-orange text-white':w==='All waves'?'bg-ink text-white':'bg-sky text-navy';
   const cardHtml = p => `<div class="${card} p-5 border-l-4 ${p.sev==='Critical'?'border-crit':p.sev==='High'?'border-high':p.sev==='Medium'?'border-med':'border-low'}">
-      <div class="flex flex-wrap items-center gap-2"><span class="rounded-md bg-navy px-2 py-0.5 text-sm font-extrabold text-white">${p.id}</span>${pill(p.sev,SEV[p.sev])}${pill(p.wave,waveCls(p.wave))}<span class="text-xs text-slate-500">${SN[p.stage]}${PREV[p.id]&&PREV[p.id]!==p.id?` · formerly ${PREV[p.id]}`:''}</span></div>
+      <div class="flex flex-wrap items-center gap-2"><span class="rounded-md bg-navy px-2 py-0.5 text-sm font-extrabold text-white">${p.id}</span>${pill(p.sev,SEV[p.sev])}<span class="text-xs text-slate-500">${SN[p.stage]}${PREV[p.id]&&PREV[p.id]!==p.id?` · formerly ${PREV[p.id]}`:''}</span></div>
       <h4 class="mt-2 font-bold text-navy">${p.title}</h4>
       <p class="mt-1 text-sm text-slate-600">${p.detail}</p>
       ${p.note?`<div class="mt-3 rounded-lg bg-sky px-3 py-2 text-xs text-navy"><span class="font-bold">Priority review: </span>${p.note}</div>`:''}
@@ -308,6 +294,18 @@ function renderPains(){
   </div>
   ${groups.map(g=>`<div class="mt-8"><h3 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-500"><span class="h-4 w-1 rounded bg-orange"></span>${g}</h3>
     <div class="mt-3 grid gap-4 md:grid-cols-2 xl:grid-cols-3">${list.filter(p=>p.group===g).map(cardHtml).join('')}</div></div>`).join('')}`;
+}
+
+function renderChanges(){
+  return `<div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+    <h2 class="text-xl font-bold text-navy flex items-center gap-2"><span class="h-6 w-1.5 rounded bg-orange"></span>What changed in V3</h2>
+    <p class="mt-1 text-sm text-slate-500">Agreed with Aflac on the priority review call. All IDs below use the new numbering.</p>
+    <div id="changes" class="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-3"></div>
+    <details class="mt-6 rounded-xl bg-mist p-4 ring-1 ring-slate-200" open>
+      <summary class="cursor-pointer font-bold text-navy">Old to new ID mapping</summary>
+      <div id="idmap" class="mt-3 grid gap-2 sm:grid-cols-3 lg:grid-cols-5 text-sm"></div>
+    </details>
+  </div>`;
 }
 
 function renderPersonas(){
@@ -364,10 +362,14 @@ function renderIntegration(){
   </div>`;
 }
 
+function fillChanges(){ if(!document.getElementById('changes')) return;
+  document.getElementById('changes').innerHTML = CHANGES.map(c=>`<div class="rounded-xl bg-mist p-4 ring-1 ring-slate-200"><span class="rounded-full ${c[1]} px-2 py-0.5 text-xs font-bold text-white">${c[0]}</span><div class="mt-2 font-bold text-navy">${c[2]}</div><p class="mt-1 text-sm text-slate-600">${c[3]}</p></div>`).join('');
+  document.getElementById('idmap').innerHTML = `<div class="flex items-center gap-2 rounded-lg bg-white px-3 py-2 ring-1 ring-slate-200"><span class="text-slate-500">P1</span><span class="text-orange font-bold">→</span><span class="font-extrabold text-navy">Target outcome</span></div>` + SEQ.map(s=>`<div class="flex items-center gap-2 rounded-lg bg-white px-3 py-2 ring-1 ring-slate-200"><span class="text-slate-500">${PREV[s.id]}</span><span class="text-orange font-bold">→</span><span class="font-extrabold text-navy">${s.id}</span></div>`).join('') + `<div class="flex items-center gap-2 rounded-lg bg-white px-3 py-2 ring-1 ring-slate-200"><span class="text-slate-500 line-through">P12</span><span class="text-xs text-slate-500">removed (solved)</span></div>`;
+}
 function render(){
   renderTabs();
-  const map = { process:renderProcess, pains:renderPains, personas:renderPersonas, integration:renderIntegration };
-  document.getElementById('panel').innerHTML = map[state.tab]();
+  const map = { process:renderProcess, pains:renderPains, changes:renderChanges, personas:renderPersonas, integration:renderIntegration };
+  document.getElementById('panel').innerHTML = map[state.tab](); fillChanges();
   const q = document.getElementById('q');
   if (q) { q.oninput = e => { state.q = e.target.value; const pos = e.target.selectionStart; render(); const n = document.getElementById('q'); n.focus(); n.setSelectionRange(pos,pos); }; }
   const ps = document.getElementById('pstage'); if (ps) ps.onchange = e => { state.pstage = e.target.value; render(); };
