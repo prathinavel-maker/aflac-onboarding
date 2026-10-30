@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aflac Group Benefits | Discovery Readout Notes V3</title>
+<script src="https://assets.meshmesh.io/system/tailwindcss-browser-4.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style type="text/tailwindcss">
+@theme {
+  --color-aflac: #00A5E6;
+  --color-aflac-dark: #0068A7;
+  --color-navy: #054C86;
+  --color-ink: #0B2A4A;
+  --color-orange: #F88C00;
+  --color-orange-light: #FAB25A;
+  --color-sky: #E6F6FD;
+  --color-mist: #F4F8FB;
+  --color-crit: #C8102E;
+  --color-high: #F88C00;
+  --color-med: #0068A7;
+  --color-low: #8A99A8;
+  --color-ok: #2E8540;
+  --font-sans: "Open Sans", Arial, sans-serif;
+}
+</style>
+</head>
+<body class="bg-mist font-sans text-ink antialiased">
+
+<!-- Masthead -->
+<header class="bg-white border-b-4 border-aflac">
+  <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between gap-4">
+    <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/dad36c96-74ba-4084-bf67-149c677eff5f/fe219b7c-64cc-4fa6-8b3e-dd10aec0c9b4.png" alt="Aflac" class="h-10 w-auto">
+    <div class="text-right text-xs text-slate-500">
+      <div class="font-semibold text-navy">Group Benefits · Policy Administration</div>
+      <div>V3 · IDs renumbered to the agreed sequence</div>
+      <div class="mt-2 flex justify-end gap-2 flex-wrap">
+        <a href="index.html" class="rounded bg-sky px-2 py-1 text-[11px] font-semibold text-navy hover:bg-aflac hover:text-white">Onboarding</a>
+        <a href="policy-admin-aflac.html" class="rounded bg-sky px-2 py-1 text-[11px] font-semibold text-navy hover:bg-aflac hover:text-white">Policy admin</a>
+        <a href="roadmap.html" class="rounded bg-sky px-2 py-1 text-[11px] font-semibold text-navy hover:bg-aflac hover:text-white">Roadmap</a>
+        <a href="discovery-readout-v2.html" class="rounded bg-sky px-2 py-1 text-[11px] font-semibold text-navy hover:bg-aflac hover:text-white">Readout V2</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="bg-gradient-to-br from-navy via-aflac-dark to-aflac text-white">
+  <div class="mx-auto max-w-7xl px-6 py-12 grid gap-8 lg:grid-cols-3 items-center">
+    <div class="lg:col-span-2">
+      <span class="inline-block rounded-full bg-orange px-3 py-1 text-xs font-bold uppercase tracking-wide">Discovery readout notes · V3</span>
+      <h1 class="mt-4 text-4xl md:text-5xl font-extrabold leading-tight">Discovery Readout Notes V3</h1>
+      <p class="mt-4 max-w-2xl text-lg text-white/90">Pain point IDs now follow the sequence agreed in the priority review, with the onboarding lifecycle shown as the target outcome. Onboarding takes 12–16 weeks, mostly because data is keyed in several times; the goal is 8–12 weeks, with Salesforce as the system of record.</p>
+    </div>
+    <div class="rounded-2xl bg-white/10 backdrop-blur p-6 ring-1 ring-white/20">
+      <div class="text-sm text-white/80">Onboarding lifecycle target</div>
+      <div class="mt-2 flex items-baseline gap-3 font-extrabold">
+        <span class="text-4xl">12–16</span>
+        <svg class="h-7 w-7 text-orange-light" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <span class="text-5xl text-orange-light">8–12</span><span class="text-lg font-semibold">weeks</span>
+      </div>
+      <div class="mt-3 text-xs text-white/70">The onboarding guide alone can take up to 12 weeks today</div>
+    </div>
+  </div>
+</section>
+
+<main class="mx-auto max-w-7xl px-6 -mt-6 pb-16">
+  <!-- KPI cards -->
+  <section id="kpis" class="grid grid-cols-2 md:grid-cols-4 gap-4"></section>
+
+  <!-- What changed -->
+  <section class="mt-10 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+    <h2 class="text-xl font-bold text-navy flex items-center gap-2"><span class="h-6 w-1.5 rounded bg-orange"></span>What changed in V3</h2>
+    <p class="mt-1 text-sm text-slate-500">Agreed with Aflac on the priority review call. All IDs below use the new numbering.</p>
+    <div id="changes" class="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-3"></div>
+    <details class="mt-6 rounded-xl bg-mist p-4 ring-1 ring-slate-200" open>
+      <summary class="cursor-pointer font-bold text-navy">Old to new ID mapping</summary>
+      <div id="idmap" class="mt-3 grid gap-2 sm:grid-cols-3 lg:grid-cols-5 text-sm"></div>
+    </details>
+  </section>
+
+  <!-- Tabs -->
+  <nav class="mt-10 flex flex-wrap gap-2 border-b border-slate-200" id="tabs"></nav>
+  <section id="panel" class="pt-8"></section>
+
+</main>
+
+<footer class="bg-navy text-white/80 text-xs">
+  <div class="mx-auto max-w-7xl px-6 py-5 flex flex-wrap justify-between gap-2">
+    <span>Aflac Group Benefits · Policy Administration Discovery</span>
+    <span>Prepared with Salesforce · Confidential working draft</span>
+  </div>
+</footer>
+
+<script>
+const PERSONAS = [
+  { id:'broker', name:'Broker / consultant', role:'Submits RFP and census, compares carriers for the employer', goals:'Fast, competitive quotes; clear proposals', pains:'Proprietary RFP platforms (Proposal Tech, AON TLS, Threeflow); slow turnarounds', needs:'Portal access, quote status, plain-language proposals' },
+  { id:'sales', name:'Sales executive', role:'Owns the opportunity from RFP to closed-won', goals:'Win the case, clean handoff', pains:'Notice of Sale issued before the final option is chosen; quote version confusion', needs:'Quote history in Salesforce, auto-generated Notice of Sale' },
+  { id:'uw', name:'Group underwriter', role:'Rates and prices risk under tight deadlines in the offline Rater tool', goals:'Speed and flexibility in a grid format', pains:'Manual keying; ~75% of cases need prior-carrier booklet comparison; census uploaded per product', needs:'Keep Rater tool flexibility, AI extraction of plan design, zero downstream re-entry' },
+  { id:'im', name:'Implementation manager', role:'Runs ~6 weeks of onboarding data gathering through client sign-off', goals:'Hit the 8-week onboarding target', pains:'Populating the onboarding guide, phone/email back-and-forth, sign-off delays', needs:'Guided workflow, real-time tracking, guide pre-populated 10 business days before kickoff' },
+  { id:'ca', name:'Contract analyst', role:'Drafts policies, certificates, ASAs, statutory applications and runs QA', goals:'20-day certificate turnaround with quality', pains:'Word templates from SharePoint; up to 40 certificates per client; misunderstood provisions', needs:'Data-driven document generation, change log, clear handover criteria' },
+  { id:'ba', name:'Implementation BA', role:'Configures ClaimVantage and Certinia from the onboarding guide; runs UAT', goals:'Accurate, sequenced configuration', pains:'Re-keying, sequential dependencies, interpreting free-form onboarding answers', needs:'Structured source data, complexity rating' },
+  { id:'tpm', name:'Technical project manager', role:'Scopes and builds eligibility, EOI, deduction, SSO and outbound integrations', goals:'Reliable day-one integrations', pains:'Bespoke client formats; Snowflake transformation quality; no test data', needs:'Standard templates, API documentation, self-service file mapping' },
+  { id:'cm', name:'Case manager / claims', role:'Adjudicates disability, leave and takeover claims', goals:'Correct benefits at the time of incident', pains:'Special-handling instructions missed; retroactive changes handled manually', needs:'In-workflow alerts, version-aware benefits pushed to claims' },
+  { id:'ae', name:'Account exec / client liaison', role:'Owns the post-launch relationship and escalations', goals:'Retention and smooth renewals', pains:'Excel action logs on SharePoint; static PDF knowledge tool', needs:'Action tracking and dashboards in Salesforce, data for renewal stewardship' },
+  { id:'hr', name:'Employer HR admin', role:'Completes onboarding homework, eligibility, billing and communications sign-off', goals:'Get benefits live with minimal effort', pains:'SMB HR generalists lack benefits expertise; sign-off fatigue; dense provisions', needs:'TurboTax-style guidance, help text, peer benchmarks, self-billing, self-service uploads' },
+  { id:'member', name:'Employee / member', role:'Uses benefits and files claims', goals:'Understand coverage, get paid quickly', pains:'Certificates only via employer; relies on HR to report issues', needs:'Member portal, clear communications, direct issue reporting' },
+];
+const PN = Object.fromEntries(PERSONAS.map(p => [p.id, p.name]));
+
+const STAGES = [
+  { id:'s1', name:'Prospect and RFP', personas:['broker','sales'], systems:['Salesforce','Loopio','Broker platforms'], current:'Broker sends RFP + census (often via Proposal Tech, AON TLS, Threeflow). Opportunity created in Salesforce; Loopio drafts RFP responses.', future:'RFP and census land on the Opportunity; non-standard provisions extracted by AI; broker portal for status.' },
+  { id:'s2', name:'Quote and rate', personas:['uw'], systems:['Rater tool (Excel)'], current:'Underwriters key plan data into per-product offline Rater tools (Life, AD&D, LTD, STD, FMLA, statutory). Census uploaded to each. Manual (SOA) and experience rates blended; red alerts flag provisions above filed limits.', future:'Rater tool retained for flexibility; single census reused; product catalog rules and decision tables mirror filings.' },
+  { id:'s3', name:'Proposal', personas:['uw','sales','broker'], systems:['Rater tool (Excel)'], current:'PDF proposal generated from Rater tool as invitation to contract; versions tracked through negotiation.', future:'Quote cloning for traceability and side-by-side version comparison before contract.' },
+  { id:'s4', name:'Sold / Notice of Sale', personas:['sales','uw','im'], systems:['Salesforce','MuleSoft'], current:'Notice of Sale (financial/SOC requirement) from partly manual template. Rater tool output uploaded to Salesforce; MuleSoft maps 1,000+ fields.', future:'Notice of Sale generated from Rater tool output; filtered ingestion to catalog/quote; underwriting changes visible downstream.' },
+  { id:'s5', name:'Implementation onboarding', personas:['im','hr','uw'], systems:['SharePoint','Excel onboarding guide'], current:'~6 weeks: client overview, funding, customer care, FMLA/leaves, ADA, takeovers, STD/LTD, Life riders, EOI, billing, portal roles, calendars. Change control log; exit on client sign-off.', future:'Guided online onboarding shared by implementation managers and the employer/broker portal; pre-populated from underwriting; dynamic logic and help text.' },
+  { id:'s6', name:'Technical scoping', personas:['tpm','hr'], systems:['Integration workbook'], current:'Integration workbook captures contacts, products, eligibility/EOI/deduction files, SSO, outbound reporting.', future:'Standard file templates and API documentation lead the conversation; self-service file mapping.' },
+  { id:'s7', name:'Contracts and documents', personas:['ca'], systems:['Word','SharePoint','Jira'], current:'Onboarding guide sign-off triggers contract team. Policies, 2–40 certificates, plan summaries, ASAs, statutory apps written manually in Word; 20-day target with QA.', future:'SmartComm document generation from Salesforce data on standard templates; statutory task packages with e-sign.' },
+  { id:'s8', name:'System configuration', personas:['ba'], systems:['ClaimVantage','Certinia'], current:'BAs configure claims/absence system and Certinia billing (classes to billing products) from the onboarding guide.', future:'Contract and policy records drive downstream configuration via integration; complexity rating sets timeline.' },
+  { id:'s9', name:'Testing and UAT', personas:['ba','tpm','ae','hr'], systems:['SmartComm','ClaimVantage'], current:'Swim lanes for communications, claims, data integration. Dummy claims for leave and STD are now automated by regression testing; multi-tier sign-offs; communication packet approvals.', future:'Extend automated test claims to other products; portal preview and sign-off of communication templates.' },
+  { id:'s10', name:'Go-live', personas:['ae','hr','cm','tpm'], systems:['Employer portal','Snowflake'], current:'Portal access ~1 week before effective date; takeover/history claims loaded; eligibility feeds, SSO, API claim decisions, advice-to-pay reports live.', future:'Pre-tested outbound reports; Tableau self-service push reporting.' },
+  { id:'s11', name:'Post-launch servicing', personas:['ae','cm','hr','member'], systems:['SharePoint','Jira','Snowflake'], current:'Excel action logs and PDF knowledge tool; annual case manager load balancing; changes via Jira (<90 days update docs, >90 days amendment); midterm adjustments.', future:'Census endorsements with cost impact, policy versioning, in-workflow alerts, portal issue reporting, dashboards.' },
+  { id:'s12', name:'Renewal', personas:['uw','ae','sales'], systems:['Rater tool (Excel)','Salesforce'], current:'1/3/5-year rate guarantees; underwriting reviews claims experience; plan designs rebuilt.', future:'Clone existing plan design; class/division experience reporting linking claims, premium and policy.' },
+];
+const SN = Object.fromEntries(STAGES.map(s => [s.id, s.name]));
+
+const PAINS = [
+  { id:'P4', title:'Underwriting-to-implementation handoff gap', detail:'Changes in underwriting are not visible downstream; Notice of Sale may be issued before the final option is selected.', stage:'s4', sev:'Critical', personas:['uw','im','sales'] },
+  { id:'P2', title:'Repeated manual re-keying', detail:'Same data keyed into Rater tool, Notice of Sale, onboarding guide, ClaimVantage/Certinia and Word contracts.', stage:'s8', sev:'Critical', personas:['uw','im','ba','ca'] },
+  { id:'P7', title:'Census uploaded per product Rater tool', detail:'Demographic census uploaded separately into each product rating tool.', stage:'s2', sev:'High', personas:['uw'] },
+  { id:'P5', title:'Prior-carrier comparison burden', detail:'~75% of cases need apples-to-apples review of prior carrier booklets; non-searchable screen prints block AI.', stage:'s2', sev:'High', personas:['uw'] },
+  { id:'P1', title:'Onboarding guide population and sign-off', detail:'The most time-consuming, complex and effort-intensive part of the handoff. Product and contract language is hard for clients to understand, and the guide can take up to 12 weeks.', stage:'s5', sev:'Critical', personas:['im','hr'] },
+  { id:'P8', title:'Conversations live in phone and email', detail:'Multi-week back-and-forth tracked in saved emails and folders; institutional knowledge lost.', stage:'s5', sev:'High', personas:['im','uw','hr'] },
+  { id:'P6', title:'SharePoint document sprawl', detail:'Policies, plan designs and eligibility files scattered across folders; security and search-time concerns.', stage:'s11', sev:'High', personas:['im','ca','ae'] },
+  { id:'P3', title:'Manual contract and plan summary creation', detail:'Policies, certificates, applications and enrollment plan summaries built manually in Word; error-prone, 20-day target. Generating them from data also validates that onboarding captured everything.', stage:'s7', sev:'Critical', personas:['ca'] },
+  { id:'P9', title:'Statutory compliance tracking', detail:'State filing windows, 30-day employee votes and registrations hard to track; risk of state fines.', stage:'s7', sev:'High', personas:['ca','hr'] },
+  { id:'P11', title:'Provisions hard to understand', detail:'SMB HR generalists often cannot identify basic coverages; repeated explanatory meetings.', stage:'s5', sev:'Medium', personas:['hr','broker'] },
+  { id:'P12', title:'Communication packet sign-off delays', detail:'Customer sign-off on claim letters and employer notifications frequently delays go-live.', stage:'s9', sev:'Medium', personas:['hr','ae'] },
+  { id:'P10', title:'Day-one outbound reporting failures', detail:'Format mismatches, no pre-testing, third-party downtime and Snowflake transformation quality gaps.', stage:'s10', sev:'High', personas:['tpm','ae'] },
+  { id:'P13', title:'Special handling not auditable', detail:'Parent-account text boxes and a static PDF knowledge tool; no way to confirm instructions were read.', stage:'s11', sev:'Medium', personas:['cm','ae'] },
+  { id:'P14', title:'Action logs outside Salesforce', detail:'AE and liaison action logs in Excel on SharePoint; problem claims not flagged in Salesforce.', stage:'s11', sev:'Medium', personas:['ae'] },
+  { id:'P15', title:'Aggregate-only experience reporting', detail:'Claims, premium and policy cannot be linked by class or division for renewal stewardship.', stage:'s12', sev:'Medium', personas:['uw','ae'] },
+  { id:'P16', title:'Exceptions flagged by cell colour', detail:'Light-yellow formatting marks exception requests; no system alert for unfiled benefits.', stage:'s2', sev:'Medium', personas:['uw','im'] },
+  { id:'P17', title:'Retroactive changes need manual adjudication', detail:'Out-of-sequence endorsements not yet supported; claims impact handled manually.', stage:'s11', sev:'Medium', personas:['cm','ba'] },
+  { id:'P18', title:'Manual call-note chain', detail:'Transcripts downloaded, uploaded to SharePoint, then summarized in Copilot.', stage:'s5', sev:'Low', personas:['im','sales'] },
+];
+
+const SYSTEMS = [
+  { name:'Salesforce (Sales Cloud / FSC)', role:'Opportunity, account, contacts, eligibility and policy objects', dir:'Hub', today:'In use as CRM', future:'Digital Insurance core: catalog, quote, contract, policy', group:'core' },
+  { name:'MuleSoft', role:'Rater tool parsing, eligibility upload', dir:'Bi-directional', today:'1,000+ field mapping job', future:'File mapping service and APIs', group:'core' },
+  { name:'Data Cloud', role:'Staging and zero-copy', dir:'Bi-directional', today:'Emerging', future:'Census and eligibility staging; Snowflake / Workday zero-copy', group:'core' },
+  { name:'Rater tool (Excel)', role:'Rating and proposal generation', dir:'Inbound', today:'Output uploaded, parsed by MuleSoft', future:'Retained; filtered ingestion feeds catalog and quote', group:'upstream' },
+  { name:'Loopio', role:'AI RFP responses', dir:'Inbound', today:'Standalone (since late 2025)', future:'Integrated with opportunity', group:'upstream' },
+  { name:'Broker platforms', role:'Proposal Tech, AON TLS, Threeflow', dir:'Bi-directional', today:'Manual entry', future:'API or broker portal', group:'upstream' },
+  { name:'ClaimVantage', role:'Claims, absence and leave configuration', dir:'Outbound', today:'Manual BA load', future:'Automatically fed by inputs for the onboarding guide to avoid manual data entry and re-keying', group:'downstream' },
+  { name:'Certinia', role:'Billing contracts, self-billing', dir:'Outbound', today:'Driven by Rater tool upload', future:'Contract-driven; Revenue Cloud option', group:'downstream' },
+  { name:'SmartComm', role:'Communications and contract documents', dir:'Outbound', today:'POC', future:'Generated from Salesforce data', group:'downstream' },
+  { name:'Snowflake', role:'Outbound report transformation', dir:'Outbound', today:'Quality and validation gaps', future:'Zero-copy with validation', group:'downstream' },
+  { name:'Tableau', role:'Reporting', dir:'Outbound', today:'Limited', future:'Self-service push reporting', group:'downstream' },
+  { name:'Employer HRIS / BenAdmin', role:'Workday etc.: eligibility, deductions, EOI', dir:'Bi-directional', today:'Files and bespoke APIs', future:'Real-time feeds, standard APIs', group:'external' },
+  { name:'Employer / member portal (SSO)', role:'HR and member self-service', dir:'Bi-directional', today:'Separate portal', future:'Experience Cloud + SSO', group:'external' },
+  { name:'SharePoint', role:'Documents, onboarding guide, action logs', dir:'Standalone', today:'Primary repository', future:'Retired for Salesforce document management', group:'retire' },
+  { name:'Jira', role:'Change requests and exceptions', dir:'Standalone', today:'Separate workflow', future:'Salesforce case/workflow or integrated', group:'retire' },
+  { name:'Copilot / Teams', role:'Call notes', dir:'Inbound', today:'Manual transcript chain', future:'Call summaries captured in Salesforce', group:'retire' },
+];
+
+const FLOWS = [
+  ['Rater tool output','Rater tool','Salesforce','File upload + MuleSoft job','Filtered ingestion to catalog/quote; Notice of Sale generated'],
+  ['Eligibility and census','Employer HRIS','Salesforce / claims','Custom files per client','Real-time feeds, Data Cloud zero-copy, portal self-upload'],
+  ['EOI and deduction files','Salesforce','Employer / carrier','Bespoke formats','Standard templates + APIs'],
+  ['Plan and policy setup','Salesforce','ClaimVantage','Manual BA configuration','Contract/policy driven integration'],
+  ['Billing','Salesforce','Certinia','Rater-driven contract','Contract-driven; self-billing portal'],
+  ['Documents','Salesforce','SmartComm','Word templates on SharePoint','Data-driven generation'],
+  ['Outbound reports','Salesforce','Snowflake / client','Extract and transform, quality gaps','Tableau push reporting with validation'],
+  ['Claim decisions / advice to pay','Claims','Employer','API and reports','Portal and API with standard docs'],
+  ['SSO','Employer IdP','Portal','Per-client setup','Experience Cloud SSO'],
+];
+
+
+/* ---------- helpers ---------- */
+const PREV = {"P1": "P6", "P2": "P3", "P3": "P9", "P4": "P2", "P5": "P5", "P6": "P8", "P7": "P4", "P8": "P7", "P9": "P10", "P10": "P14", "P11": "P11", "P12": "P13", "P13": "P15", "P14": "P16", "P15": "P17", "P16": "P18", "P17": "P19", "P18": "P20"};
+const SEQ = [
+  { id:'P1', group:'Critical · Wave 1 (P1 + P2 together)', wave:'Wave 1', note:'Now includes product and contract complexity. First step is moving the guide off Excel into a system; up to 80–90% may be pre-filled from Rater tool data.' },
+  { id:'P2', group:'Critical · Wave 1 (P1 + P2 together)', wave:'Wave 1', note:'Handled with P1 as one approach. Now includes structured data capture, validation and integrity: enter once, accurately, and reuse downstream.' },
+  { id:'P3', group:'Critical · Wave 2', wave:'Wave 2', note:'Elevated from High. Contracts and plan summaries generated from data validate that onboarding captured everything.' },
+  { id:'P4', group:'Critical · Wave 3', wave:'Wave 3', note:'Stays Critical. The re-keying side is solved in Wave 1; minimum Notice of Sale data and a shared view follow as a second phase.' },
+  { id:'P5', group:'High · next after the foundation', wave:'Next', note:'Borderline critical: ingest prior carrier booklets and RFP plan PDFs into the Rater tool. Needs the data structure first.' },
+  { id:'P6', group:'High · next after the foundation', wave:'Start early', note:'Evaluate the document repository early, Salesforce first, before documents are generated in Wave 2.' },
+  { id:'P7', group:'High · next after the foundation', wave:'Next', note:'Stays High. Moves up if pre-filling the guide from Rater data depends on it.' },
+  { id:'P8', group:'High · next after the foundation', wave:'Next', note:'Confirmed High: one activity log for emails and Teams conversations.' },
+  { id:'P9', group:'High · later', wave:'Later', note:'' },
+  { id:'P10', group:'High · later', wave:'Later', note:'' },
+  { id:'P11', group:'Medium', wave:'With Wave 1', note:'Largely addressed by the plain-language layer in P1.' },
+  { id:'P12', group:'Medium', wave:'Later', note:'' },
+  { id:'P13', group:'Medium', wave:'Later', note:'' },
+  { id:'P14', group:'Medium', wave:'Later', note:'' },
+  { id:'P15', group:'Medium', wave:'Later', note:'' },
+  { id:'P16', group:'Medium', wave:'With Wave 1', note:'Structured exception flags come with structured data capture.' },
+  { id:'P17', group:'Medium', wave:'Later', note:'' },
+  { id:'P18', group:'Low', wave:'With P8', note:'' },
+];
+const CHANGES = [
+  ['Renumbered','bg-navy','IDs now follow the sequence','P1 to P18 are numbered in the order they will be tackled, starting with the onboarding guide. Former IDs are shown on each card.'],
+  ['Separated','bg-ok','Onboarding lifecycle is the target outcome','12–16 weeks down to 8–12 weeks. It is no longer listed as a pain point; every pain point contributes to it.'],
+  ['Combined','bg-aflac','P1 and P2 handled together','Structured data entry, validation and integrity sit under P2 and are built alongside the guide.'],
+  ['Updated','bg-aflac','P1 now includes product complexity','Contract language and provisions are hard for clients to understand.'],
+  ['Elevated','bg-crit','P3 is now Critical','Contract and plan summary creation, sequenced right after the onboarding guide.'],
+  ['Phased','bg-orange','P4 stays Critical, in two parts','Re-keying solved with P1 + P2; other handoff fixes follow later.'],
+  ['Removed','bg-slate-500','Dummy claims (former P12) is solved','Leave and STD test claims are now automated.'],
+];
+const SEV = { Critical:'bg-crit text-white', High:'bg-high text-white', Medium:'bg-med text-white', Low:'bg-low text-white' };
+const pill = (t, c) => `<span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${c}">${t}</span>`;
+const tag = t => `<span class="inline-flex rounded-md bg-sky px-2 py-0.5 text-xs font-medium text-navy">${t}</span>`;
+const otag = t => `<span class="inline-flex rounded-md border border-slate-300 px-2 py-0.5 text-xs text-slate-600">${t}</span>`;
+const chip = (label, active, attr) => `<button ${attr} class="rounded-full px-4 py-1.5 text-sm font-semibold transition ${active ? 'bg-navy text-white' : 'bg-white text-navy ring-1 ring-slate-300 hover:ring-aflac'}">${label}</button>`;
+const card = 'rounded-2xl bg-white shadow-sm ring-1 ring-slate-200';
+
+const state = { tab:'pains', mode:'current', stage:'s5', sev:'All', pstage:'All', q:'', persona:'im', iview:'today' };
+
+/* ---------- KPIs ---------- */
+document.getElementById('kpis').innerHTML = [
+  ['Onsite workshop', 'Day 1 & Day 2', 'Oct 13–14, 2026'],
+  ['Pain points', PAINS.length, PAINS.filter(p=>p.sev==='Critical').length + ' critical'],
+  ['Personas', PERSONAS.length, 'Internal and external'],
+  ['Systems mapped', SYSTEMS.length, 'Salesforce as hub'],
+].map(([l,v,n],i) => `<div class="${card} p-5 ${i===1?'border-t-4 border-orange':'border-t-4 border-aflac'}"><div class="text-sm text-slate-500">${l}</div><div class="mt-1 text-3xl font-extrabold text-navy tabular-nums">${v}</div><div class="text-xs text-slate-500">${n}</div></div>`).join('');
+
+
+document.getElementById('changes').innerHTML = CHANGES.map(c=>`<div class="rounded-xl bg-mist p-4 ring-1 ring-slate-200"><span class="rounded-full ${c[1]} px-2 py-0.5 text-xs font-bold text-white">${c[0]}</span><div class="mt-2 font-bold text-navy">${c[2]}</div><p class="mt-1 text-sm text-slate-600">${c[3]}</p></div>`).join('');
+
+document.getElementById('idmap').innerHTML = `<div class="flex items-center gap-2 rounded-lg bg-white px-3 py-2 ring-1 ring-slate-200"><span class="text-slate-500">P1</span><span class="text-orange font-bold">→</span><span class="font-extrabold text-navy">Target outcome</span></div>` + SEQ.map(s=>`<div class="flex items-center gap-2 rounded-lg bg-white px-3 py-2 ring-1 ring-slate-200"><span class="text-slate-500">${PREV[s.id]}</span><span class="text-orange font-bold">→</span><span class="font-extrabold text-navy">${s.id}</span></div>`).join('') + `<div class="flex items-center gap-2 rounded-lg bg-white px-3 py-2 ring-1 ring-slate-200"><span class="text-slate-500 line-through">P12</span><span class="text-xs text-slate-500">removed (solved)</span></div>`;
+
+/* ---------- tabs ---------- */
+const TABS = [['pains','Prioritized pain points'],['process','Process flow'],['personas','Personas'],['integration','System integration']];
+function renderTabs(){
+  document.getElementById('tabs').innerHTML = TABS.map(([k,l]) =>
+    `<button data-tab="${k}" class="-mb-px border-b-4 px-4 py-3 text-sm font-bold transition ${state.tab===k?'border-orange text-navy':'border-transparent text-slate-500 hover:text-aflac'}">${l}</button>`).join('');
+}
+
+function renderProcess(){
+  const s = STAGES.find(x=>x.id===state.stage);
+  const pains = PAINS.filter(p=>p.stage===s.id);
+  const cur = state.mode==='current';
+  return `
+  <div class="flex flex-wrap items-center justify-between gap-4">
+    <p class="text-sm text-slate-600">Twelve stages from RFP to renewal. Select a stage to see its pain points, people and systems.</p>
+    <div class="flex gap-2">${chip('Current state',cur,'data-mode="current"')}${chip('Future state',!cur,'data-mode="future"')}</div>
+  </div>
+  <div class="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6">
+    ${STAGES.map((x,i)=>{const n=PAINS.filter(p=>p.stage===x.id).length;const c=PAINS.some(p=>p.stage===x.id&&p.sev==='Critical');const sel=x.id===state.stage;
+      return `<button data-stage="${x.id}" class="relative rounded-xl p-3 text-left transition ${sel?'bg-navy text-white shadow-md':'bg-white ring-1 ring-slate-200 hover:ring-aflac'}">
+        <div class="flex items-center justify-between text-xs ${sel?'text-white/70':'text-slate-500'}"><span>Step ${i+1}</span>${n?pill(n,c?'bg-crit text-white':'bg-high text-white'):''}</div>
+        <div class="mt-1 text-sm font-bold">${x.name}</div>
+        ${i<STAGES.length-1?`<span class="hidden xl:block absolute -right-2 top-1/2 -translate-y-1/2 text-aflac">›</span>`:''}
+      </button>`}).join('')}
+  </div>
+  <div class="${card} mt-6 overflow-hidden">
+    <div class="${cur?'bg-sky':'bg-orange/10'} px-6 py-4 flex items-center justify-between">
+      <h3 class="text-xl font-extrabold text-navy">${s.name}</h3>${pill(cur?'Current state':'Future state', cur?'bg-navy text-white':'bg-orange text-white')}
+    </div>
+    <div class="grid gap-6 p-6 lg:grid-cols-3">
+      <div class="lg:col-span-2 space-y-5">
+        <p class="text-base leading-relaxed">${cur?s.current:s.future}</p>
+        ${cur?`<div><h4 class="text-sm font-bold text-navy">Pain points at this stage</h4><div class="mt-2 space-y-3">${pains.length?pains.map(p=>`<div class="flex items-start gap-3 text-sm">${pill(p.id,SEV[p.sev])}<div><div class="font-semibold">${p.title}</div><div class="text-slate-600">${p.detail}</div></div></div>`).join(''):'<p class="text-sm text-slate-500">No pain points mapped directly to this stage.</p>'}</div></div>`:''}
+      </div>
+      <div class="space-y-4 text-sm">
+        <div><div class="mb-2 font-bold text-navy">Personas</div><div class="flex flex-wrap gap-1">${s.personas.map(p=>tag(PN[p])).join('')}</div></div>
+        <div><div class="mb-2 font-bold text-navy">Systems today</div><div class="flex flex-wrap gap-1">${s.systems.map(otag).join('')}</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-10">
+    <h3 class="text-lg font-bold text-navy">Future-state flow on Salesforce</h3>
+    <div class="mt-4 flex flex-wrap items-center gap-2 text-sm">
+      ${['RFP to opportunity','Rater tool ingestion','Catalog and quote','Notice of Sale auto-generated','Contract (system of record)','Guided onboarding','Enrollment census','Versioned policies','Document generation','Billing','Claims','Self-service portal and reporting','Clone-based renewal'].map((x,i,a)=>`<span class="rounded-lg bg-white px-3 py-2 font-semibold text-navy ring-1 ring-aflac/40">${x}</span>${i<a.length-1?'<span class="text-orange font-bold">→</span>':''}`).join('')}
+    </div>
+  </div>`;
+}
+
+function renderPains(){
+  const P = Object.fromEntries(PAINS.map(p=>[p.id,p]));
+  const ordered = SEQ.filter(s=>P[s.id]).map((s,i)=>({...P[s.id], ...s, rank:i}));
+  const list = ordered.filter(p=>(state.sev==='All'||p.sev===state.sev)&&(state.pstage==='All'||p.stage===state.pstage)&&(p.title+p.detail+p.note).toLowerCase().includes(state.q.toLowerCase()));
+  const groups = [...new Set(list.map(p=>p.group))];
+  const waveCls = w => w==='Wave 1'?'bg-aflac text-white':w==='Wave 2'?'bg-navy text-white':w==='Wave 3'?'bg-orange text-white':w==='All waves'?'bg-ink text-white':'bg-sky text-navy';
+  const cardHtml = p => `<div class="${card} p-5 border-l-4 ${p.sev==='Critical'?'border-crit':p.sev==='High'?'border-high':p.sev==='Medium'?'border-med':'border-low'}">
+      <div class="flex flex-wrap items-center gap-2"><span class="rounded-md bg-navy px-2 py-0.5 text-sm font-extrabold text-white">${p.id}</span>${pill(p.sev,SEV[p.sev])}${pill(p.wave,waveCls(p.wave))}<span class="text-xs text-slate-500">${SN[p.stage]}${PREV[p.id]&&PREV[p.id]!==p.id?` · formerly ${PREV[p.id]}`:''}</span></div>
+      <h4 class="mt-2 font-bold text-navy">${p.title}</h4>
+      <p class="mt-1 text-sm text-slate-600">${p.detail}</p>
+      ${p.note?`<div class="mt-3 rounded-lg bg-sky px-3 py-2 text-xs text-navy"><span class="font-bold">Priority review: </span>${p.note}</div>`:''}
+      <div class="mt-3 flex flex-wrap gap-1">${p.personas.map(x=>tag(PN[x])).join('')}</div>
+    </div>`;
+  return `
+  <div class="mb-6 rounded-2xl bg-gradient-to-r from-navy to-aflac p-5 text-white">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div><span class="rounded-full bg-orange px-3 py-0.5 text-xs font-bold uppercase tracking-wide">Target outcome</span>
+        <div class="mt-2 text-xl font-extrabold">Compress the onboarding lifecycle</div>
+        <p class="mt-1 max-w-2xl text-sm text-white/85">Not a pain point itself: every pain point below contributes to it. Implementation managers spend about 6 weeks just gathering baseline information, and the onboarding guide alone can take up to 12 weeks.</p></div>
+      <div class="flex items-baseline gap-3 font-extrabold"><span class="text-3xl">12–16</span><span class="text-orange-light text-2xl">→</span><span class="text-4xl text-orange-light">8–12</span><span class="font-semibold">weeks</span></div>
+    </div>
+  </div>
+  <p class="text-sm text-slate-600">Pain points in the order they will be tackled, as agreed on the priority review call. IDs now match the sequence: P1 is tackled first and P18 last. Each card shows its former ID.</p>
+  <div class="mt-4 flex flex-wrap gap-2">${['All','Critical','High','Medium','Low'].map(s=>chip(s,state.sev===s,`data-sev="${s}"`)).join('')}</div>
+  <div class="mt-4 flex flex-wrap items-center gap-3">
+    <input id="q" value="${state.q}" placeholder="Search pain points" class="w-full max-w-xs rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm focus:border-aflac focus:outline-none">
+    <select id="pstage" class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm"><option value="All">All stages</option>${STAGES.map(s=>`<option value="${s.id}" ${state.pstage===s.id?'selected':''}>${s.name}</option>`).join('')}</select>
+    <span class="text-sm text-slate-500">${list.length} of ${PAINS.length}</span>
+  </div>
+  ${groups.map(g=>`<div class="mt-8"><h3 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-slate-500"><span class="h-4 w-1 rounded bg-orange"></span>${g}</h3>
+    <div class="mt-3 grid gap-4 md:grid-cols-2 xl:grid-cols-3">${list.filter(p=>p.group===g).map(cardHtml).join('')}</div></div>`).join('')}`;
+}
+
+function renderPersonas(){
+  const p = PERSONAS.find(x=>x.id===state.persona);
+  const stages = STAGES.filter(s=>s.personas.includes(p.id));
+  const pains = PAINS.filter(x=>x.personas.includes(p.id));
+  const initials = p.name.split(/[\s\/]+/).filter(Boolean).slice(0,2).map(w=>w[0].toUpperCase()).join('');
+  return `
+  <div class="grid gap-6 lg:grid-cols-3">
+    <div class="space-y-2">${PERSONAS.map(x=>`<button data-persona="${x.id}" class="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm transition ${x.id===p.id?'bg-navy text-white':'bg-white ring-1 ring-slate-200 hover:ring-aflac'}"><span class="font-semibold">${x.name}</span><span class="text-xs ${x.id===p.id?'text-white/70':'text-slate-500'}">${PAINS.filter(y=>y.personas.includes(x.id)).length} pains</span></button>`).join('')}</div>
+    <div class="${card} lg:col-span-2 overflow-hidden">
+      <div class="bg-gradient-to-r from-navy to-aflac p-6 text-white flex items-center gap-4">
+        <div class="flex h-14 w-14 items-center justify-center rounded-full bg-orange text-lg font-extrabold">${initials}</div>
+        <div><h3 class="text-2xl font-extrabold">${p.name}</h3><p class="text-white/85 text-sm">${p.role}</p></div>
+      </div>
+      <div class="p-6 space-y-6 text-sm">
+        <div class="grid gap-4 md:grid-cols-3">
+          <div class="rounded-xl bg-sky p-4"><div class="font-bold text-navy">Goals</div><p class="mt-1 text-slate-700">${p.goals}</p></div>
+          <div class="rounded-xl bg-orange/10 p-4"><div class="font-bold text-orange">Frustrations</div><p class="mt-1 text-slate-700">${p.pains}</p></div>
+          <div class="rounded-xl bg-mist p-4 ring-1 ring-slate-200"><div class="font-bold text-aflac-dark">Needs</div><p class="mt-1 text-slate-700">${p.needs}</p></div>
+        </div>
+        <div><div class="mb-2 font-bold text-navy">Involved in stages</div><div class="flex flex-wrap gap-1">${stages.map(s=>otag(s.name)).join('')}</div></div>
+        <div><div class="mb-2 font-bold text-navy">Linked pain points</div><div class="space-y-2">${pains.length?pains.map(x=>`<div class="flex items-center gap-2">${pill(x.id,SEV[x.sev])}<span>${x.title}</span></div>`).join(''):'<p class="text-slate-500">None mapped.</p>'}</div></div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderIntegration(){
+  const today = state.iview==='today';
+  const sysCard = s => `<div class="rounded-xl bg-white p-3 text-sm ring-1 ring-slate-200"><div class="flex items-start justify-between gap-2"><span class="font-bold text-navy">${s.name}</span>${otag(s.dir)}</div><div class="mt-1 text-xs text-slate-500">${s.role}</div><div class="mt-2 text-xs font-semibold ${today?'text-slate-700':'text-aflac-dark'}">${today?s.today:s.future}</div></div>`;
+  const col = (key,label) => `<div class="space-y-3"><div class="text-xs font-bold uppercase tracking-wide text-slate-500">${label}</div>${SYSTEMS.filter(s=>s.group===key).map(sysCard).join('')}</div>`;
+  return `
+  <div class="flex flex-wrap items-center justify-between gap-4">
+    <p class="text-sm text-slate-600">Salesforce as the hub. Toggle to compare today's integration pattern with the target state.</p>
+    <div class="flex gap-2">${chip('Today',today,'data-iview="today"')}${chip('Future',!today,'data-iview="future"')}</div>
+  </div>
+  <div class="mt-6 grid gap-6 lg:grid-cols-[1fr_1.2fr_1fr] items-start">
+    <div class="space-y-6">${col('upstream','Upstream · sales and rating')}${col('external','Employer and member facing')}</div>
+    <div class="rounded-2xl bg-gradient-to-br from-navy to-aflac-dark p-5 text-white shadow-lg">
+      <div class="text-xs font-bold uppercase tracking-wide text-orange-light">Salesforce platform core</div>
+      <div class="mt-3 space-y-3">${SYSTEMS.filter(s=>s.group==='core').map(s=>`<div class="rounded-xl bg-white/10 p-3 ring-1 ring-white/20"><div class="font-bold">${s.name}</div><div class="text-xs text-white/70">${s.role}</div><div class="mt-2 text-xs font-semibold text-orange-light">${today?s.today:s.future}</div></div>`).join('')}</div>
+    </div>
+    <div class="space-y-6">${col('downstream','Downstream · admin, billing, docs, reporting')}</div>
+  </div>
+  <div class="mt-6 rounded-2xl border-2 border-dashed border-orange/50 bg-orange/5 p-5">
+    <div class="text-xs font-bold uppercase tracking-wide text-orange">Candidates to retire or absorb</div>
+    <div class="mt-3 grid gap-3 md:grid-cols-3">${SYSTEMS.filter(s=>s.group==='retire').map(sysCard).join('')}</div>
+  </div>
+  <h3 class="mt-10 text-lg font-bold text-navy">Key integration flows</h3>
+  <div class="${card} mt-4 overflow-x-auto">
+    <table class="w-full text-sm"><thead class="bg-navy text-white text-left"><tr>${['Flow','From','To','Today','Target'].map(h=>`<th class="px-4 py-3 font-semibold">${h}</th>`).join('')}</tr></thead>
+    <tbody>${FLOWS.map((r,i)=>`<tr class="${i%2?'bg-mist':'bg-white'}">${r.map((c,j)=>`<td class="px-4 py-3 ${j===0?'font-semibold text-navy':j===4?'text-aflac-dark font-medium':j===3?'text-slate-500':''}">${c}</td>`).join('')}</tr>`).join('')}</tbody></table>
+  </div>`;
+}
+
+function render(){
+  renderTabs();
+  const map = { process:renderProcess, pains:renderPains, personas:renderPersonas, integration:renderIntegration };
+  document.getElementById('panel').innerHTML = map[state.tab]();
+  const q = document.getElementById('q');
+  if (q) { q.oninput = e => { state.q = e.target.value; const pos = e.target.selectionStart; render(); const n = document.getElementById('q'); n.focus(); n.setSelectionRange(pos,pos); }; }
+  const ps = document.getElementById('pstage'); if (ps) ps.onchange = e => { state.pstage = e.target.value; render(); };
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  const d = b.dataset;
+  if (d.tab) state.tab = d.tab;
+  else if (d.mode) state.mode = d.mode;
+  else if (d.stage) state.stage = d.stage;
+  else if (d.sev) state.sev = d.sev;
+  else if (d.persona) state.persona = d.persona;
+  else if (d.iview) state.iview = d.iview;
+  else return;
+  render();
+});
+render();
+</script>
+
+<div data-mm-footer style="all:initial;display:flex;align-items:center;justify-content:center;padding:40px 24px 36px;margin-top:24px;border-top:1px solid rgba(127,127,127,.2);font:inherit;">
+  <img data-mm-footer-logo src="https://meshmesh.io/brand/meshmesh-salesforce-wordmark-blk.svg" alt="MeshMesh for Salesforce" style="display:block;height:26px;width:auto;max-width:none;margin:0;opacity:.8;border:0;box-shadow:none;" />
+</div>
+<script>(function(){try{
+  var logo=document.querySelector('[data-mm-footer-logo]');if(!logo)return;
+  var cx=document.createElement('canvas').getContext('2d');
+  function rgba(c){cx.clearRect(0,0,1,1);cx.fillStyle='#000';cx.fillStyle=c;cx.fillRect(0,0,1,1);return cx.getImageData(0,0,1,1).data;}
+  function bg(el){while(el){var c=getComputedStyle(el).backgroundColor;if(c){var p=rgba(c);if(p[3]>25)return p;}el=el.parentElement;}return null;}
+  var p=bg(document.body)||bg(document.documentElement);
+  if(p&&(0.2126*p[0]+0.7152*p[1]+0.0722*p[2])/255<0.5)logo.src="https://meshmesh.io/brand/meshmesh-salesforce-wordmark-wht.svg";
+}catch(e){}})();</script>
+</body>
+</html>
